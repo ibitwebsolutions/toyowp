@@ -11,6 +11,9 @@
             display: none;
         }
     </style>
+    <script type="text/javascript">
+        var templateUrl = '<?= get_bloginfo("template_url"); ?>/';
+    </script>
 </head>
 <body>
 	<header>

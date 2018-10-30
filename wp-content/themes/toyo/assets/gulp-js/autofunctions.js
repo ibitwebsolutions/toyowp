@@ -52,8 +52,8 @@ function carSlide(carImg,carThumb,makerIndex){
     }
 	
 	for(var x=0;x<CarsList[index].models.length;x++){
-		CarImg.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].model[0].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].model[0].name+"'/></div>");
-		CarThumb.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].model[0].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].model[0].name+"'/></div>");
+		CarImg.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
+		CarThumb.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
 	}
     
 
@@ -62,10 +62,10 @@ function carSlide(carImg,carThumb,makerIndex){
 function carData(maker,model){
 	var CarsList = cars;
 	for(var i=0;i<CarsList.length;i++){
-		maker.append("<option value='"+CarsList[i].maker+" 'data-index='"+i+"'>"+CarsList[i].maker+"</option>");
+		maker.append("<option data-id='"+CarsList[i].maker_id+" 'data-index='"+i+"'>"+CarsList[i].maker+"</option>");
 	}
 
 	for(var x=0;x<CarsList[0].models.length;x++){
-		model.append("<option value='"+CarsList[0].models[x].model[0].name+"' data-index='"+x+"'>"+CarsList[0].models[x].model[0].name+"</option>");
+		model.append("<option data-id='"+CarsList[0].models[x].model_id+"' data-index='"+x+"'>"+CarsList[0].models[x].name+"</option>");
 	}
 }

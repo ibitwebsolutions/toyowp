@@ -8,18 +8,17 @@ var sass        	= require('gulp-sass');
 var plumber 		= require('gulp-plumber');
 var uglify 			= require('gulp-uglify');
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass','js'], () => {
+// Static Server + watching scss/php files
+gulp.task('serve', ['js'], () => {
 
-	browserSync.init({
-		server: "."
-	});
+	// browserSync.init({
+	// 	server: "."
+	// });
 
 	gulp.watch([
-			   'assets/scss/*.scss',
 			   'assets/gulp-js/*.js'
-			   ], ['sass','js']);
-	gulp.watch("*.html").on('change', browserSync.reload);
+			   ], ['js']);
+	// gulp.watch("*.php").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
@@ -38,13 +37,18 @@ gulp.task('sass', () => {
 				this.emit('end');
 			}
 		}))
-		.pipe(sass({outputStyle : 'compressed'}))
+		// .pipe(sass({outputStyle : 'compressed'}))
 		.pipe(gulp.dest("./"))
 		.pipe(browserSync.stream());
 });
 
 gulp.task('js', () => {
-	return gulp.src('assets/gulp-js/*.js')
+	return gulp.src([
+					'assets/plugins/jquery/js/jquery.js',
+					'assets/plugins/bootstrap/js/bootstrap.min.js',
+					'assets/plugins/slick/slick.min.js',
+					'assets/gulp-js/*.js'
+					])
 	.pipe(concat("index.js"))
 	.pipe(plumber({
 			handleError: function(err) {
@@ -52,7 +56,7 @@ gulp.task('js', () => {
 				this.emit('end');
 			}
 		}))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('assets/js/'))
 	.pipe(browserSync.stream());
 });

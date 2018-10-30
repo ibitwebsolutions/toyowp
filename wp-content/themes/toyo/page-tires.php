@@ -20,7 +20,7 @@
                         <div class="col-sm-12">
                             <div class="pull-left">
                                 <ul class="size-select">
-                                    <li><a href="#">BY VEHICLE</a></li>
+                                    <li><a href="<?php echo site_url(); ?>/cars/">BY VEHICLE</a></li>
                                     <li><a href="#" class="active">BY SIZE</a></li>
                                 </ul>
                             </div>
