@@ -58,6 +58,39 @@ else if ($fn==2){
         header('Content-Type: application/json');
         echo json_encode(array("result"=>array_values($resultOITM)));
 }
+else if ($fn==3){
+        $resultOITM = array();
+        $desc = $_POST['width']."/".$_POST['ratio']." R ".$_POST['rim'];
+        $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            array_push($resultOITM , array(
+                    "item_code"=>$row['item_code'],
+                    "pattern_code"=>$row['pattern_code'],
+                    "pattern_desc"=>$row['pattern_desc']
+                )
+            );
+        }
 
+        header('Content-Type: application/json');
+        echo json_encode(array("result"=>array_values($resultOITM)));
+}
+else if ($fn==4){
+        $resultOITM = array();
+        $desc = $_POST['term'];
+        $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            array_push($resultOITM , array(
+                    "item_code"=>$row['item_code'],
+                    "pattern_code"=>$row['pattern_code'],
+                    "pattern_desc"=>$row['pattern_desc']
+                )
+            );
+        }
+
+        header('Content-Type: application/json');
+        echo json_encode(array("result"=>array_values($resultOITM)));
+}
 
 ?>

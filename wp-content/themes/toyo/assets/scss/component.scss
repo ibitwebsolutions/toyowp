@@ -4,8 +4,6 @@
     width: 100%;
     margin: 0 auto;
     bottom: 0;
-    // left: 12%;
-    // width: 687px;
     width: 100%;
     text-align: center;
 
@@ -15,7 +13,7 @@
         margin: 0 auto;
         bottom: -2px;
 
-        a{
+        a {
             color: $white;
         }
 
@@ -104,9 +102,6 @@
                 }
 
                 &:before {
-                    // img.light{
-                    // 	display: block;
-                    // }
                     background-image: url(../img/before2.png);
                 }
             }
@@ -121,7 +116,7 @@
 
             &.tires {
                 img {
-                	width: 120px;
+                    width: 120px;
                     top: 12px;
                     right: -19px;
                 }
@@ -139,11 +134,10 @@
 }
 
 #home-news {
-	//Pre Julius itago mo muna to sa CMS pwde to ito i show or i hide pero by default nka hide to
-	display: inline-block;
-	position: absolute;
-	right: 50px;
-	bottom: 150px;
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    bottom: 150px;
     margin-top: 30px;
 
     ul {
@@ -155,7 +149,7 @@
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
- 
+
             &:hover {
                 opacity: 1;
             }
@@ -165,52 +159,54 @@
 
 
 
-ul.size-select{
-	display: block;
-	padding: 0;
-	margin-bottom: 0px;
-	li{
-		display: inline-block;
-		margin-right: 20px;
-		a{
-			color: $black;
-			font-size: 20px;
-			font-weight: bold;
+ul.size-select {
+    display: block;
+    padding: 0;
+    margin-bottom: 0px;
 
-			&.active{
-				color: $blue;
-			}
-		}
-	}
+    li {
+        display: inline-block;
+        margin-right: 20px;
+
+        a {
+            color: $black;
+            font-size: 20px;
+            font-weight: bold;
+
+            &.active {
+                color: $blue;
+            }
+        }
+    }
 }
 
-.size-box{
-	overflow-x: auto;
-	overflow-y: hidden;
+.size-box {
+    overflow-x: auto;
+    overflow-y: hidden;
     max-width: 555px;
     padding: 20px 0;
     width: 100%;
     height: 350px;
+
     .size-options {
         display: flex;
         width: auto;
         margin-top: 20px;
+
         ul {
-        	display: inline-block;
+            display: inline-block;
             float: left;
             padding: 0;
             list-style: none;
-            /* room for 3 columns */
         }
 
         ul li {
-        	display: block;
+            display: block;
             width: 138px;
             margin-bottom: 20px;
             margin-left: 0px;
             text-align: center;
             font-size: 18px;
-            /* accommodate the widest item */
         }
 
         /* stop the floating after the list */
@@ -219,65 +215,70 @@ ul.size-select{
         }
 
         /* anchor styling */
-    	ol li a
-    	{
-    	  display: block;
-    	  width: 7em;
-    	  // text-decoration: none;
-    	}
-    	ul li a:hover
-    	{
-    	  color: $black;
-    	  font-weight: bold;
-    	  text-decoration: underline!important;
-    	}
+        ol li a {
+            display: block;
+            width: 7em;
+        }
+
+        ul li a:hover {
+            color: $black;
+            font-weight: bold;
+            text-decoration: underline !important;
+        }
     }
 }
 
-.contact{
+.contact {
     padding: 50px 0;
-    .title{
-        font-size: 30px!important;
+
+    .title {
+        font-size: 30px !important;
     }
 
-    p{
+    p {
         font-weight: bold;
-        font-size: 20px!important;
+        font-size: 20px !important;
     }
 }
 
-.car-options{
-    .car-select{
-        .slick-list{
+.car-options {
+    .car-select {
+        .slick-list {
             height: 300px;
-            .slick-track{
+
+            .slick-track {
                 height: 300px;
-                div.slick-slide{
+
+                div.slick-slide {
                     text-align: center;
                     outline: none;
-                    img{
-                        // display: inline-block;
-                        width:100%;
+
+                    img {
+                        width: 100%;
                         height: auto;
                     }
-                } 
+                }
             }
         }
     }
-    .car-thumb{
-        height: 98px!important;
-        div.slick-slide{
+
+    .car-thumb {
+        height: 98px !important;
+
+        div.slick-slide {
             margin: 0 25px;
-            text-align: center!important;
+            text-align: center !important;
             outline: none;
             cursor: pointer;
-            img{
-                display: inline-block!important;
+
+            img {
+                display: inline-block !important;
                 width: 152px;
                 height: auto;
             }
         }
     }
+
     .slick-dots li button {
         font-size: 0px;
         line-height: 0;
@@ -296,18 +297,20 @@ ul.size-select{
     }
 }
 
-.cars-form{
+.cars-form {
     margin-top: 40px;
-    .input-group{
+
+    .input-group {
         width: 100%;
         margin-bottom: 10px;
+
         label,
-        select{
+        select {
             display: block;
             font-size: 20px;
         }
 
-        select{
+        select {
             padding: 5px 15px;
             width: 100%;
             text-transform: capitalize;
@@ -315,43 +318,45 @@ ul.size-select{
     }
 }
 
-.news-title{
-    .title{
+.news-title {
+    .title {
         margin: 0;
         font-size: 24px;
         font-weight: normal;
     }
 
-    span.date{
+    span.date {
         font-size: 18px;
     }
 }
 
-.news-body{
+.news-body {
     margin-top: 40px;
 }
 
-.result-title{
-    p{
-        margin: 0!important;
+.result-title {
+    p {
+        margin: 0 !important;
         font-weight: bold;
-        font-size: 22px!important;
+        font-size: 22px !important;
     }
 
-    span{
+    span {
         color: $blue;
     }
 }
 
-.result-slide{
+.result-slide {
     position: relative;
-    .result-item{
+
+    .result-item {
         display: inline-block;
         overflow: hidden;
         position: relative;
         margin-top: 10px;
         height: 320px;
-        .tire-img{
+
+        .tire-img {
             display: inline-block;
             width: 180px;
             height: 130px;
@@ -360,24 +365,24 @@ ul.size-select{
             background-position: top center;
         }
 
-        .tire-logo{
-                width: 180px;
-                height: 33px;
+        .tire-logo {
+            width: 180px;
+            height: 33px;
         }
 
         .tire-logo,
-        p{
-            display: inline-block!important;
-            margin: 0!important;
+        p {
+            display: inline-block !important;
+            margin: 0 !important;
             width: 180px;
 
         }
 
 
-        p{
-            margin-top: 10px!important;
-            margin-bottom: 10px!important;
-            height: 80px!important;
+        p {
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+            height: 80px !important;
             display: -webkit-box;
             margin: 0 auto;
             line-height: 120%;
@@ -387,11 +392,78 @@ ul.size-select{
             text-overflow: ellipsis;
         }
 
-        a{
+        a {
             position: relative;
             display: inline-block;
             width: 180px;
             bottom: 10px;
         }
+    }
+}
+
+.searchBlock {
+    display: inline-block;
+    position: relative;
+    width: 444px;
+
+    .manualSearch {
+        margin-top: 20px;
+        width: 100%;
+
+        .input-group {
+            width: 100%;
+            display: inline-block;
+            float: left;
+
+            label,span{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+            }
+
+            span{
+                float: left;
+                font-size: 14px;
+                color: $blue;
+            }
+
+            input[type=text] {
+                display: inline-block;
+                float: left;
+                width: 80%;
+                    padding: 6px 12px;
+            }
+
+            ul.suggestList {
+                overflow-y: scroll;
+                position: absolute;
+                width: 80%;
+                top: 75px;
+                padding: 0 !important;
+                max-height: 65px;
+                text-align: left;
+                li {
+                    padding: 6px 12px;
+                    margin: 0;
+                    background-color: rgba($white,0.75);
+                    font-weight: bold;
+
+                    &:hover{
+                        color: $white;
+                        background-color: rgba($blue,0.75);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            input[type=submit] {
+                display: inline-block;
+                float: left;
+                width: 18%;
+                margin-left: 2%;
+            }
+        }
+
     }
 }

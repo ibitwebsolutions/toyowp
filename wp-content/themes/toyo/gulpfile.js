@@ -9,15 +9,16 @@ var plumber 		= require('gulp-plumber');
 var uglify 			= require('gulp-uglify');
 
 // Static Server + watching scss/php files
-gulp.task('serve', ['js'], () => {
+gulp.task('serve', ['sass','js'], () => {
 
 	// browserSync.init({
 	// 	server: "."
 	// });
 
 	gulp.watch([
-			   'assets/gulp-js/*.js'
-			   ], ['js']);
+				'assets/scss/*.scss',
+			    'assets/gulp-js/*.js'
+			   ], ['sass','js','serve']);
 	// gulp.watch("*.php").on('change', browserSync.reload);
 });
 
@@ -25,6 +26,7 @@ gulp.task('serve', ['js'], () => {
 gulp.task('sass', () => {
 	return gulp.src([
 					"assets/plugins/bootstrap/css/bootstrap.min.css",
+					"assets/plugins/slick/slick.scss",
 					"assets/scss/base.scss",
 					"assets/scss/layout.scss",
 					"assets/scss/component.scss",
@@ -37,7 +39,7 @@ gulp.task('sass', () => {
 				this.emit('end');
 			}
 		}))
-		// .pipe(sass({outputStyle : 'compressed'}))
+		.pipe(sass({outputStyle : 'expanded'}))
 		.pipe(gulp.dest("./"))
 		.pipe(browserSync.stream());
 });
@@ -45,6 +47,7 @@ gulp.task('sass', () => {
 gulp.task('js', () => {
 	return gulp.src([
 					'assets/plugins/jquery/js/jquery.js',
+					'assets/plugins/jquery/js/jquery-ui.js',
 					'assets/plugins/bootstrap/js/bootstrap.min.js',
 					'assets/plugins/slick/slick.min.js',
 					'assets/gulp-js/*.js'

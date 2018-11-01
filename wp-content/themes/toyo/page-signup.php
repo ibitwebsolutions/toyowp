@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p class="page-title">Find your fit</p>
+                        <p class="page-title">Sign Up</p>
                     </div>
                 </div>
             </div>
