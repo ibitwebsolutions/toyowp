@@ -1,14 +1,16 @@
 "use strict";	
 
 //Asynchronus Background image loading
-var img1 = document.createElement("img");
+var imgBG = document.createElement("img");
 
-$('body').css('background-image', "url("+bgTemp+")");
+imgBG.onload = function(){
+	 $('body').css('background-image', "url("+this.src+")");
+}
 
-$(img1).attr('src', templateUrl+'assets/img/bg.jpg').on('load', function() {
-   $(this).remove();
-   $('body').css('background-image', "url('"+templateUrl+"'assets/img/bg.jpg)");
-});
+
+setTimeout(function(){
+	imgBG.src = templateUrl+"assets/img/bg.jpg";
+},50)
 
 
 
@@ -32,13 +34,10 @@ $('#manualSearch').bind('input', function(){
 	}
 });
 
-$("ul.suggestList").click(function(){
-	
 
-	$("ul.suggestList li").click(function(){
-		$('#manualSearch').val($(this).html());
-		$("ul.suggestList").empty();
-	})
+$('ul.suggestList').on('click','li', function () {
+    $('#manualSearch').val($(this).html());
+	$("ul.suggestList").empty();
 });
 
 //Tire select by size Script
@@ -206,11 +205,12 @@ $(document).ready(function(){
 
 	$('#manual-searchForm').submit(function(e){
 		e.preventDefault();
-		alert("dsada");
 		$.ajax({
 			url: templateUrl+"api/function.php",
 			type:"POST", 
-			data: {fnID: 4,term: $("#manualSearch").val()},
+			data: {fnID: 4,
+				   term: $("#manualSearch").val()
+			},
 			success: function(result){
 				$('.carsearch-box').css({"display":"none"});
 				$('.result-box').css({"display":"block"});
@@ -223,6 +223,8 @@ $(document).ready(function(){
 			},
 			async: false
 		});
+		alert($("#manualSearch").val());
+		return false;
 	});
 	
 	

@@ -128,14 +128,16 @@ function carData(maker,model){
 "use strict";	
 
 //Asynchronus Background image loading
-var img1 = document.createElement("img");
+var imgBG = document.createElement("img");
 
-$('body').css('background-image', "url("+bgTemp+")");
+imgBG.onload = function(){
+	 $('body').css('background-image', "url("+this.src+")");
+}
 
-$(img1).attr('src', templateUrl+'assets/img/bg.jpg').on('load', function() {
-   $(this).remove();
-   $('body').css('background-image', "url('"+templateUrl+"'assets/img/bg.jpg)");
-});
+
+setTimeout(function(){
+	imgBG.src = templateUrl+"assets/img/bg.jpg";
+},50)
 
 
 
@@ -159,13 +161,10 @@ $('#manualSearch').bind('input', function(){
 	}
 });
 
-$("ul.suggestList").click(function(){
-	
 
-	$("ul.suggestList li").click(function(){
-		$('#manualSearch').val($(this).html());
-		$("ul.suggestList").empty();
-	})
+$('ul.suggestList').on('click','li', function () {
+    $('#manualSearch').val($(this).html());
+	$("ul.suggestList").empty();
 });
 
 //Tire select by size Script
@@ -331,27 +330,27 @@ $(document).ready(function(){
 		});
 	});
 
-	$('#manual-searchForm').submit(function(e){
-		e.preventDefault();
-		alert("dsada");
-		$.ajax({
-			url: templateUrl+"api/function.php",
-			type:"POST", 
-			data: {fnID: 4,term: $("#manualSearch").val()},
-			success: function(result){
-				$('.carsearch-box').css({"display":"none"});
-				$('.result-box').css({"display":"block"});
-				$('#search-value').html("Tire size: "+$(this).child("input[type=text]").val().toUpperCase());
-				$('#sublist').html(result.result.length+" result for "+$(this).child("input[type=text]").val());
-				
-				for(var i=0;i<result.result.length;i++){
-					$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");
-				}
-			},
-			async: false
-		});
-	});
-	
-	
-
 }); 
+
+$('#manual-searchForm').submit(function(e){
+	e.preventDefault();
+	$.ajax({
+		url: templateUrl+"api/function.php",
+		type:"POST", 
+		data: {fnID: 4,
+			   term: $("#manualSearch").val()
+		},
+		success: function(result){
+			$('.carsearch-box').css({"display":"none"});
+			$('.result-box').css({"display":"block"});
+			$('#search-value').html("Tire size: "+$("#manualSearch").val());
+			$('#sublist').html(result.result.length+" result for "+$("#manualSearch").val());
+			
+			for(var i=0;i<result.result.length;i++){
+				$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");
+			}
+		},
+		async: false
+	});
+	return false;
+});

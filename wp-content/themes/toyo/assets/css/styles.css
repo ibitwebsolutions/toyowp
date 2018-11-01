@@ -7076,6 +7076,7 @@ body {
   padding: 0;
   height: 100vh;
   font-family: 'Helvetica';
+  background-image: url("../img/bg-min.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -7456,7 +7457,7 @@ ul.size-select li a.active {
 
 .size-box .size-options ul li {
   display: block;
-  width: 138px;
+  width: 135px;
   margin-bottom: 20px;
   margin-left: 0px;
   text-align: center;
@@ -7579,12 +7580,22 @@ ul.size-select li a.active {
 }
 
 .result-title p {
+  display: inline-block !important;
   margin: 0 !important;
   font-weight: bold;
   font-size: 22px !important;
 }
 
+.result-title a {
+  position: relative;
+  left: 10px;
+  bottom: 2px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
 .result-title span {
+  display: block;
   color: #3d8fc8;
 }
 
@@ -7658,7 +7669,8 @@ ul.size-select li a.active {
   float: left;
 }
 
-.searchBlock .manualSearch .input-group label, .searchBlock .manualSearch .input-group span {
+.searchBlock .manualSearch .input-group label,
+.searchBlock .manualSearch .input-group span {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -7706,6 +7718,8 @@ ul.size-select li a.active {
   float: left;
   width: 18%;
   margin-left: 2%;
+  background-color: #3d8fc8;
+  color: #fff;
 }
 
 .title {

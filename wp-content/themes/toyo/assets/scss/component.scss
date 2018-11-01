@@ -202,7 +202,7 @@ ul.size-select {
 
         ul li {
             display: block;
-            width: 138px;
+            width: 135px;
             margin-bottom: 20px;
             margin-left: 0px;
             text-align: center;
@@ -336,12 +336,22 @@ ul.size-select {
 
 .result-title {
     p {
+        display: inline-block !important;
         margin: 0 !important;
         font-weight: bold;
         font-size: 22px !important;
     }
 
+    a {
+        position: relative;
+        left: 10px;
+        bottom: 2px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
     span {
+        display: block;
         color: $blue;
     }
 }
@@ -415,14 +425,15 @@ ul.size-select {
             display: inline-block;
             float: left;
 
-            label,span{
+            label,
+            span {
                 width: 100%;
                 margin: 0;
                 padding: 0;
                 text-align: left;
             }
 
-            span{
+            span {
                 float: left;
                 font-size: 14px;
                 color: $blue;
@@ -432,7 +443,7 @@ ul.size-select {
                 display: inline-block;
                 float: left;
                 width: 80%;
-                    padding: 6px 12px;
+                padding: 6px 12px;
             }
 
             ul.suggestList {
@@ -443,15 +454,16 @@ ul.size-select {
                 padding: 0 !important;
                 max-height: 65px;
                 text-align: left;
+
                 li {
                     padding: 6px 12px;
                     margin: 0;
-                    background-color: rgba($white,0.75);
+                    background-color: rgba($white, 0.75);
                     font-weight: bold;
 
-                    &:hover{
+                    &:hover {
                         color: $white;
-                        background-color: rgba($blue,0.75);
+                        background-color: rgba($blue, 0.75);
                         cursor: pointer;
                     }
                 }
@@ -462,6 +474,8 @@ ul.size-select {
                 float: left;
                 width: 18%;
                 margin-left: 2%;
+                background-color: $blue;
+                color: $white;
             }
         }
 

@@ -29,21 +29,21 @@
                         <div class="col-sm-12 car-options carsearch-box">
                             <div class="col-sm-6">
                                 <div class="size-box">
-                                    <div class="size-options">
-                                    </div>
+                                    <div class="size-options"></div>
                                 </div>
+                                <button class="sm-btn btn btn-custom pull-right btn-skip" id="skip">Skip</button>
                             </div>
                             <div class="col-sm-6 text-center">
                                 <h3 style="margin-top:0">HOW TO FIND YOUR TIRE SIZE</h3>
                                 <img src="assets/img/1.png" alt="" id="chart">
                                 <div class="searchBlock">
-                                    <form action="#" id="manual-searchForm" class="manualSearch">
+                                    <form action="#" id="manual-searchForm" class="manualSearch" >
                                         <div class="input-group">
                                             <label for="#manualSearch">MANUAL SEARCH INPUT</label>
                                             <span>Note: This is for custom sizes</span>
-                                            <input type="text" id="manualSearch">
+                                            <input type="text" id="manualSearch" autocomplete="off">
                                             <ul class="suggestList"></ul>
-                                            <input type="submit" class="btn custom-btn" value="Submit">
+                                            <input type="submit" value="Submit" id="submitmanual" class="btn custom-btn">
                                         </div>
                                     </form>
                                 </div>
@@ -53,6 +53,7 @@
                         <div class="col-sm-12 result-box" style="display: none">
                             <div class="result-title">
                                 <p id="search-value">Isuzu MU-X</p>
+                                <a href="#">Change</a>
                                 <span id="sublist">4 result for Isuzu MU-X</span>
                             </div>
                             <div class="slide-box">
