@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-sm-6 text-center">
                                 <h3 style="margin-top:0">HOW TO FIND YOUR TIRE SIZE</h3>
-                                <img src="assets/img/1.png" alt="" id="chart">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1-min.png" alt="" id="chart">
                                 <div class="searchBlock">
                                     <form action="#" id="manual-searchForm" class="manualSearch" >
                                         <div class="input-group">

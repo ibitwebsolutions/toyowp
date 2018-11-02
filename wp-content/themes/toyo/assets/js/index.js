@@ -125,20 +125,6 @@ function carData(maker,model){
 	}
 }
 "use strict";
-"use strict";	
-
-//Asynchronus Background image loading
-var imgBG = document.createElement("img");
-
-imgBG.onload = function(){
-	 $('body').css('background-image', "url("+this.src+")");
-}
-
-
-setTimeout(function(){
-	imgBG.src = templateUrl+"assets/img/bg.jpg";
-},50)
-
 
 
 $('#manualSearch').bind('input', function(){
@@ -167,15 +153,34 @@ $('ul.suggestList').on('click','li', function () {
 	$("ul.suggestList").empty();
 });
 
-//Tire select by size Script
-var orig = document.getElementById("chart");
-var aspectRatioIMG = document.createElement("img");
-var rimIMG = document.createElement("img");
-var sizeSet = [];
 
-$('#chart').attr('src', templateUrl+"assets/img/1.png");
-aspectRatioIMG.src = templateUrl+"assets/img/2.png";
-rimIMG.src = templateUrl+"assets/img/3.png";
+
+//Asynchronus Background image loading
+var imgBG = document.createElement("img");
+var chart = document.createElement("img");
+
+imgBG.onload = function(){
+	 $('body').css('background-image', "url("+this.src+")");
+}
+
+chart.onload = function(){
+	 $('#chart').attr('src', this.src);
+}
+
+
+setTimeout(function(){
+	imgBG.src = templateUrl+"assets/img/bg.jpg";
+	chart.src = templateUrl+"assets/img/1.png";
+
+	//Tire select by size Script
+	var orig = document.getElementById("chart");
+	var aspectRatioIMG = document.createElement("img");
+	var rimIMG = document.createElement("img");
+	var sizeSet = [];
+
+	aspectRatioIMG.src = templateUrl+"assets/img/2.png";
+	rimIMG.src = templateUrl+"assets/img/3.png";
+},50)
 
 
 changeOption("tire-width",Twidth);
