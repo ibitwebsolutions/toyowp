@@ -244,10 +244,10 @@ ul.size-select {
 .car-options {
     .car-select {
         .slick-list {
-            height: 300px;
+            height: 280px;
 
             .slick-track {
-                height: 300px;
+                height: 280px;
 
                 div.slick-slide {
                     text-align: center;
@@ -332,7 +332,65 @@ ul.size-select {
 
 .news-body {
     margin-top: 40px;
+    .slide-box{
+        padding: 0;
+
+        .news-box {
+            position: relative;
+            margin: 0;
+            text-align: center;
+
+            div.news-bg{
+                position: absolute;
+                width: 100%;
+                height: 290px;
+                filter: blur(4px);
+                zoom: 1;
+                z-index: -1;
+                left: 0;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y: 50%;
+            }
+
+            img.item-img{
+                display: inline-block;
+                width: auto!important;
+                height: 290px!important;
+            }
+        }
+    }
 }
+.news-about{
+    .slide-box{
+        padding: 0;
+        .newsmini-slider{
+            width: 330px;
+            height: 182px;
+        }
+        .news-box {
+            position: relative;
+            margin: 0;
+            width: 330px;
+            height: 182px;
+            text-align: center;
+
+            img.news-bg{
+                position: absolute;
+                width: 100%;
+                zoom: 1;
+                filter: blur(4px);
+            }
+
+            img.item-img{
+                display: inline-block;
+                width: auto!important;
+                height: 182px!important;
+            }
+        }
+    }
+}
+
 
 .result-title {
     p {
@@ -480,4 +538,9 @@ ul.size-select {
         }
 
     }
+}
+
+#chart{
+    width: 444px;
+    height: 206px;
 }

@@ -2,14 +2,28 @@
 
 //Asynchronus Background image loading
 var imgBG = document.createElement("img");
+var img1 = document.createElement("img");
 
 imgBG.onload = function(){
 	 $('body').css('background-image', "url("+this.src+")");
 }
 
+img1.onload = function(){
+	 $('#chart').attr('src', this.src);
+}
+
+//Tire select by size Script
+var orig = document.getElementById("chart");
+var aspectRatioIMG = document.createElement("img");
+var rimIMG = document.createElement("img");
+var sizeSet = [];
 
 setTimeout(function(){
 	imgBG.src = templateUrl+"assets/img/bg.jpg";
+	img1.src = templateUrl+"assets/img/1.png";
+
+	aspectRatioIMG.src = templateUrl+"assets/img/2.png";
+	rimIMG.src = templateUrl+"assets/img/3.png";
 },50)
 
 
@@ -39,17 +53,6 @@ $('ul.suggestList').on('click','li', function () {
     $('#manualSearch').val($(this).html());
 	$("ul.suggestList").empty();
 });
-
-//Tire select by size Script
-var orig = document.getElementById("chart");
-var aspectRatioIMG = document.createElement("img");
-var rimIMG = document.createElement("img");
-var sizeSet = [];
-
-$('#chart').attr('src', templateUrl+"assets/img/1.png");
-aspectRatioIMG.src = templateUrl+"assets/img/2.png";
-rimIMG.src = templateUrl+"assets/img/3.png";
-
 
 changeOption("tire-width",Twidth);
 
@@ -83,6 +86,8 @@ $('.result-slide').slick({
 
 $(".size-options").on("click", "a.tire-rim", function(){
     sizeSet.push({"rim":$(this).html()});
+    var r;
+    (sizeSet[1].ratio)? r=sizeSet[1].ratio:r="";
 
     $.ajax({
 		url: templateUrl+"api/function.php",
@@ -90,14 +95,19 @@ $(".size-options").on("click", "a.tire-rim", function(){
 		data: {
 				fnID: 3,
 				width:sizeSet[0].width,
-				ratio:sizeSet[1].ratio,
+				ratio:r,
 				rim:sizeSet[2].rim
 		},
 		success: function(result){
+			if (r) {
+				r="Tire Size: "+sizeSet[0].width+"/"+sizeSet[1].ratio+" R "+sizeSet[2].rim;
+			}else{
+				r="Tire Size: "+sizeSet[0].width+" R "+sizeSet[2].rim;
+			}
 			$('.carsearch-box').css({"display":"none"});
 			$('.result-box').css({"display":"block"});
-			$('#search-value').html("Tire Size: "+sizeSet[0].width+"/"+sizeSet[1].ratio+" R "+sizeSet[2].rim);
-			$('#sublist').html(result.result.length+" result for "+sizeSet[0].width+"/"+sizeSet[1].ratio+" R "+sizeSet[2].rim);
+			$('#search-value').html(r);
+			$('#sublist').html(result.result.length+" result for "+r);
 			
 			for(var i=0;i<result.result.length;i++){
 				$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");
@@ -134,10 +144,30 @@ $(document).ready(function(){
 	  asNavFor: '.car-select',
 	  dots: true,
 	  centerMode: false,
-	  focusOnSelect: true
+	  focusOnSelect: true,
+	  responsive: [
+	    {
+	      breakpoint: 990,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1,
+	        infinite: true,
+	        dots: true,
+	        centerMode: false,
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
 	});
 
 	$('.news-slider').slick({
+		autoplay:true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		lazyLoad: 'ondemand',
@@ -147,10 +177,26 @@ $(document).ready(function(){
 		dots: false,
 		centerMode: false,
 		focusOnSelect: true,
-		adaptiveHeight: true
+		adaptiveHeight: true,
+		cssEase: 'linear',
+		infinite: true
 	});
 
-	
+	$('.newsmini-slider').slick({
+		autoplay:true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		lazyLoad: 'ondemand',
+		arrows: false,
+		fade: true,
+		dots: false,
+		centerMode: false,
+		focusOnSelect: false,
+		adaptiveHeight: true,
+		cssEase: 'linear',
+		infinite: true,
+  		speed: 500,
+	});
 
 	carData($('#maker'),$('#model'));//First load
 	carSlide($('.car-select'),$('.car-thumb'),0);//Second load
@@ -203,30 +249,28 @@ $(document).ready(function(){
 		});
 	});
 
-	$('#manual-searchForm').submit(function(e){
-		e.preventDefault();
-		$.ajax({
-			url: templateUrl+"api/function.php",
-			type:"POST", 
-			data: {fnID: 4,
-				   term: $("#manualSearch").val()
-			},
-			success: function(result){
-				$('.carsearch-box').css({"display":"none"});
-				$('.result-box').css({"display":"block"});
-				$('#search-value').html("Tire size: "+$(this).child("input[type=text]").val().toUpperCase());
-				$('#sublist').html(result.result.length+" result for "+$(this).child("input[type=text]").val());
-				
-				for(var i=0;i<result.result.length;i++){
-					$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");
-				}
-			},
-			async: false
-		});
-		alert($("#manualSearch").val());
-		return false;
-	});
-	
-	
-
 }); 
+
+
+
+$('#manual-searchForm').submit(function(e){
+	e.preventDefault();
+	$.ajax({
+		url: templateUrl+"api/function.php",
+		type:"POST", 
+		data: {fnID: 4,
+			   term: $("#manualSearch").val()
+		},
+		success: function(result){
+			$('.carsearch-box').css({"display":"none"});
+			$('.result-box').css({"display":"block"});
+			$('#search-value').html("Tire size: "+$("#manualSearch").val());
+			$('#sublist').html(result.result.length+" result for "+$("#manualSearch").val());
+			
+			for(var i=0;i<result.result.length;i++){
+				$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");
+			}
+		},
+		async: false
+	});
+});

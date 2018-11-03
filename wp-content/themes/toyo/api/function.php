@@ -61,6 +61,7 @@ else if ($fn==2){
 else if ($fn==3){
         $resultOITM = array();
         $desc = $_POST['width']."/".$_POST['ratio']." R ".$_POST['rim'];
+        
         $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){

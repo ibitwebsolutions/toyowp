@@ -1,0 +1,61 @@
+@media only screen and (max-width: 1200px){
+	.page-body{
+		p{
+			font-size: 1.2vw!important;
+		}
+	}
+
+	.car-options {
+	    .car-select {
+	        .slick-list {
+	            height: 270px;
+	        }
+	    }
+	}
+}
+
+@media only screen and (max-width: 990px){
+	.page-body{
+		p{
+			font-size: 14px!important;
+		}
+	}
+
+	.car-options {
+	    .car-select {
+	        .slick-list {
+	            height: 200px;
+	        }
+	    }
+	}
+
+	#chart{
+	    width: auto;
+	    height: 150px;
+	}
+}
+
+
+@media only screen and (max-width: 767px){
+	body{
+		overflow: scroll;
+	}
+
+	
+	section {height: auto}
+
+	.container {
+	    width: 100%;
+	}
+
+	.page-body{
+		height: auto;
+		p{
+			font-size: 16px!important;
+		}
+	}
+
+	header .desktop-menu{
+		display: none;
+	}
+}

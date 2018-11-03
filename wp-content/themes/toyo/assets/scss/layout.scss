@@ -1,5 +1,5 @@
 body{
-	overflow: hidden;
+	overflow-y: auto;
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -9,7 +9,7 @@ body{
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	background-size: 100%;
+	background-size: cover;
 
 	&.scroll{
 		overflow-y: auto;
@@ -106,7 +106,15 @@ header{
 	}
 }
 
+article,
+section .page{
+	overflow: hidden;
+	height: 100%;
+}
+
 section{
+	overflow: hidden;
+	height: 80%;
 	.page{
 		display: block;
 		.page-title{
@@ -119,7 +127,8 @@ section{
 		}
 
 		.page-body{
-			min-height: 33vw;
+			// min-height: 33vw;
+			height: 90%;
 			margin-bottom: 20px;
 			padding: 15px 0;
 			background-color: rgba($white,0.75);

@@ -26,25 +26,28 @@
 							</div>
 
 							<div class="col-sm-4 col-xs-12">
-								<div class="col-xs-12">
+								<div class="col-xs-12 news-about">
 									<h3 class="title">News</h3>
-									<div class="news-box row">
-										<?php
-											$news = get_field('field_5bd281889aaac', 23);
-                                            foreach($news as $item) {
-                                        ?>
-                                            <div class="col-md-6">
-												<a href="<?php echo site_url().'/news/'; ?>">
-													<img class="img-responsive" src="<?php echo $item['news_image'] ?>" alt="">
-												</a>
-											</div>
-                                        <?php
-                                            }
-										?>
-									</div>
-									<h3 class="title">PROMOS</h3>
-									<div class="news-box">
-										<img src="assets/img/news.jpg" alt="">
+									<div class="slide-box">
+										<div class="newsmini-slider">
+											<?php
+												$news = get_field('field_5bd281889aaac', 23);
+		                                        foreach($news as $item) {
+		                                    ?>
+		                                    <div>
+												<div class="news-box row">
+													<img data-lazy="<?php echo $item['news_image'] ?>" class="news-bg" alt="">
+			                                        <div class="col-md-12">
+														<a href="<?php echo site_url().'/news/'; ?>">
+															<img class="img-responsive item-img" data-lazy="<?php echo $item['news_image'] ?>" alt="">
+														</a>
+													</div>
+												</div>
+		                                    </div>
+		                                    <?php
+		                                        }
+											?>
+										</div>
 									</div>
 								</div>
 							</div>

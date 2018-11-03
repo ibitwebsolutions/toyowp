@@ -26,7 +26,7 @@
                     ?>
 					<div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php echo $image[0]; ?>" alt=""></a></div>
 				</div>
-				<div class="col-sm-9">
+				<div class="col-sm-9 desktop-menu">
 					<div class="col-sm-12">
 						<div class="top-menu">
                             <?php

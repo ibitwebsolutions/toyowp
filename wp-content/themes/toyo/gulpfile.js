@@ -30,7 +30,8 @@ gulp.task('sass', () => {
 					"assets/scss/base.scss",
 					"assets/scss/layout.scss",
 					"assets/scss/component.scss",
-					"assets/scss/utils.scss"
+					"assets/scss/utils.scss",
+					"assets/scss/responsive.scss"
 				   ])
 		.pipe(concat('assets/css/styles.css'))
 		.pipe(plumber({
