@@ -27,15 +27,11 @@
                         </div>
 
                         <div class="col-sm-12 car-options carsearch-box">
-                            <div class="col-sm-6">
-                                <div class="size-box">
-                                    <div class="size-options"></div>
+                            <div class="col-sm-6 col-sm-push-6 col-xs-12 text-center">
+                                <div class="chart-block">
+                                    <h3 style="margin-top:0">HOW TO FIND YOUR TIRE SIZE</h3>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1-min.png" alt="" id="chart">
                                 </div>
-                                <button class="sm-btn btn btn-custom pull-right btn-skip" id="skip">Skip</button>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <h3 style="margin-top:0">HOW TO FIND YOUR TIRE SIZE</h3>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1-min.png" alt="" id="chart">
                                 <div class="searchBlock">
                                     <form action="#" id="manual-searchForm" class="manualSearch" >
                                         <div class="input-group">
@@ -47,6 +43,12 @@
                                         </div>
                                     </form>
                                 </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-pull-6 col-xs-12">
+                                <div class="size-box">
+                                    <div class="size-options"></div>
+                                </div>
+                                <button class="sm-btn btn btn-custom pull-right btn-skip" id="skip">Skip</button>
                             </div>
                         </div>
 

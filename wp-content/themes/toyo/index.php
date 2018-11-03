@@ -16,7 +16,7 @@
                 $home_menu_bottom = get_field('home_menu_bottom');
                 foreach($home_menu_bottom as $item) {
             ?>
-                <div class="col-sm-4 <?php echo $item['home_menu_bottom_class']; ?>">
+                <div class="col-md-4 col-xs-12 <?php echo $item['home_menu_bottom_class']; ?>">
                     <a href="<?php echo $item['home_menu_bottom_link']; ?>">
                         <p><?php echo $item['home_menu_bottom_title']; ?></p>
                         <img src="<?php echo $item['home_menu_bottom_image']; ?>" alt="<?php echo $item['home_menu_bottom_title']; ?>">

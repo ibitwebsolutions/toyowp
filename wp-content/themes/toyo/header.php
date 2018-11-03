@@ -12,7 +12,18 @@
         }
     </style>
     <script type="text/javascript">
+
+        //GLobal Variables
         var templateUrl = '<?= get_bloginfo("template_url"); ?>/';
+        var home_url = "<?= home_url( '/' );?>";
+        var cars;
+
+
+        <?php
+            $obj_id = get_queried_object_id();
+            $current_url = get_permalink( $obj_id );
+        ?>
+        var current_url = "<?php echo $current_url?>";
     </script>
 </head>
 <body>

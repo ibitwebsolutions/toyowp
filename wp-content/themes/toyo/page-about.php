@@ -17,7 +17,7 @@
 				<div class="page-body">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-8 col-xs-12">
+							<div class="col-md-8  col-xs-12">
                             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
                             the_content();
                             endwhile; else: ?>
@@ -25,7 +25,7 @@
                             <?php endif; ?>
 							</div>
 
-							<div class="col-sm-4 col-xs-12">
+							<div class="col-md-4 col-xs-12">
 								<div class="col-xs-12 news-about">
 									<h3 class="title">News</h3>
 									<div class="slide-box">

@@ -26,7 +26,18 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 carsearch-box">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-sm-push-6">
+                                    <div class="col-md-12 car-options">
+                                        <div class="slide-box">
+                                            <div class="car-select"></div>
+                                            <a href="#" class="right-nav rightmain"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/right-nav.jpg" alt=""></a>
+                                            <a href="#" class="left-nav leftmain"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/left-nav.jpg" alt=""></a>
+                                        </div>
+
+                                        <div class="car-thumb"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-sm-pull-6">
                                     <form action="#" id="car-search" class="col-md-8 col-md-offset-2 cars-form">
                                         <div class="input-group">
                                             <label for="#carbrand">Vehicle make</label>
@@ -38,17 +49,6 @@
                                         </div>
                                         <input type="submit" value="Submit" class="btn btn-custom pull-right">
                                     </form>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-md-12 car-options">
-                                        <div class="slide-box">
-                                            <div class="car-select"></div>
-                                            <a href="#" class="right-nav rightmain"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/right-nav.jpg" alt=""></a>
-                                            <a href="#" class="left-nav leftmain"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/left-nav.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="car-thumb"></div>
-                                    </div>
                                 </div>
                                 </div>
                             </div>

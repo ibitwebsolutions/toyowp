@@ -15,6 +15,12 @@
 }
 
 @media only screen and (max-width: 990px){
+	section {height: auto}
+
+	.container {
+	    width: 100%;
+	}
+
 	.page-body{
 		p{
 			font-size: 14px!important;
@@ -36,7 +42,7 @@
 }
 
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
 	body{
 		overflow: scroll;
 	}
@@ -48,6 +54,12 @@
 	    width: 100%;
 	}
 
+	.quick-box {
+		> div{
+			display: block;
+		}
+	}
+
 	.page-body{
 		height: auto;
 		p{
@@ -56,6 +68,110 @@
 	}
 
 	header .desktop-menu{
+		display: none;
+	}
+	
+	.news-about{
+		.slide-box{
+	        padding: 0;
+	        .newsmini-slider{
+	            width: 100%!important;
+	            height: 182px;
+	        }
+	        .news-box {
+	            position: relative;
+	            margin: 0;
+	            width: 100%!important;
+	            height: 182px;
+	            text-align: center;
+	        }
+	    }
+	}
+
+	.news-title{
+		display: inline-block;
+	}
+
+	.news-body{
+		margin-top: 15px;
+		.news-slider{
+			.slick-list{
+				width: 100%!important;
+				.slide-box{
+			        padding: 0;
+			        .news-box {
+			            width: 100%!important;
+			        }
+			    }
+			}
+		}
+	}
+
+	.manualSearch{
+		input[type=text]{
+			width: 80%;
+		}
+		#submitmanual{
+			width: 80%;
+			margin: 0;
+			margin-top: 5px;
+		}
+	}
+
+	.chart-block{
+
+		h3{
+			font-size: 18px;
+		}
+
+		#chart{
+		    width: 100%;
+		    height: auto;
+		}
+	}
+
+
+	.searchBlock{
+		width: 100%;
+
+		input[type=text],
+		ul.suggestList,
+		input[type=submit] {
+            width: 100%!important;
+        }
+	}
+
+	.btn-skip{
+		width: 100%;
+	}
+
+	.car-select{
+		height: 130px;
+	}
+
+}
+
+@media only screen and (max-width: 640px){
+	.car-options > .slide-box{
+		display: none;
+	}
+
+	.slick-dotted.slick-slider{
+		margin-bottom: 15px;
+	}
+
+	.car-thumb{
+		display: none;
+	}
+
+	.result-slide{
+		> div{
+			display: block;
+		}
+	}
+
+	.right-nav,
+	.left-nav{
 		display: none;
 	}
 }

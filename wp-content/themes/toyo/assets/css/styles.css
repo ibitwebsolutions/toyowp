@@ -7913,6 +7913,10 @@ ul.size-select li a.active {
   margin-top: 40px;
 }
 
+.m0 {
+  margin: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .page-body p {
     font-size: 1.2vw !important;
@@ -7923,6 +7927,12 @@ ul.size-select li a.active {
 }
 
 @media only screen and (max-width: 990px) {
+  section {
+    height: auto;
+  }
+  .container {
+    width: 100%;
+  }
   .page-body p {
     font-size: 14px !important;
   }
@@ -7935,7 +7945,7 @@ ul.size-select li a.active {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   body {
     overflow: scroll;
   }
@@ -7945,6 +7955,9 @@ ul.size-select li a.active {
   .container {
     width: 100%;
   }
+  .quick-box > div {
+    display: block;
+  }
   .page-body {
     height: auto;
   }
@@ -7952,6 +7965,83 @@ ul.size-select li a.active {
     font-size: 16px !important;
   }
   header .desktop-menu {
+    display: none;
+  }
+  .news-about .slide-box {
+    padding: 0;
+  }
+  .news-about .slide-box .newsmini-slider {
+    width: 100% !important;
+    height: 182px;
+  }
+  .news-about .slide-box .news-box {
+    position: relative;
+    margin: 0;
+    width: 100% !important;
+    height: 182px;
+    text-align: center;
+  }
+  .news-title {
+    display: inline-block;
+  }
+  .news-body {
+    margin-top: 15px;
+  }
+  .news-body .news-slider .slick-list {
+    width: 100% !important;
+  }
+  .news-body .news-slider .slick-list .slide-box {
+    padding: 0;
+  }
+  .news-body .news-slider .slick-list .slide-box .news-box {
+    width: 100% !important;
+  }
+  .manualSearch input[type=text] {
+    width: 80%;
+  }
+  .manualSearch #submitmanual {
+    width: 80%;
+    margin: 0;
+    margin-top: 5px;
+  }
+  .chart-block h3 {
+    font-size: 18px;
+  }
+  .chart-block #chart {
+    width: 100%;
+    height: auto;
+  }
+  .searchBlock {
+    width: 100%;
+  }
+  .searchBlock input[type=text],
+  .searchBlock ul.suggestList,
+  .searchBlock input[type=submit] {
+    width: 100% !important;
+  }
+  .btn-skip {
+    width: 100%;
+  }
+  .car-select {
+    height: 130px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .car-options > .slide-box {
+    display: none;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 15px;
+  }
+  .car-thumb {
+    display: none;
+  }
+  .result-slide > div {
+    display: block;
+  }
+  .right-nav,
+  .left-nav {
     display: none;
   }
 }

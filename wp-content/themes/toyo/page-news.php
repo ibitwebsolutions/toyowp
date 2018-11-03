@@ -31,7 +31,7 @@
                                             $news = get_field('field_5bd281889aaac');
                                             foreach($news as $item) {
                                         ?>
-                                            <div class="col-sm-4 news-box">
+                                            <div class="col-md-6  news-box">
                                                 <div style="background-image:url('<?php echo $item['news_image'] ?>')" class="news-bg"></div>
                                                 <img data-lazy="<?php echo $item['news_image'] ?>" alt="" class="item-img">
                                             </div>
