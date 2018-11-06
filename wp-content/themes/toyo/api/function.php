@@ -43,7 +43,7 @@ else if ($fn==2){
         $sql = "SELECT item_code FROM tb_pairings WHERE car_id='".$_POST['carID']."' and model_id='".$_POST['modelID']."'";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
-            $q = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_code='".$row['item_code']."' GROUP BY tb_oitm.pattern_id";
+            $q = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_code='".$row['item_code']."'";
             $res = mysqli_query($conn, $q);
             while($rowz = mysqli_fetch_array($res)){
                 array_push($resultOITM , array(

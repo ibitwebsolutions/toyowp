@@ -94,17 +94,12 @@
 
 	.news-body{
 		margin-top: 15px;
-		.news-slider{
-			.slick-list{
-				width: 100%!important;
-				.slide-box{
-			        padding: 0;
-			        .news-box {
-			            width: 100%!important;
-			        }
-			    }
-			}
-		}
+		.slide-box{
+	        padding: 0;
+	        .news-box {
+	            padding: 0!important;
+	        }
+	    }
 	}
 
 	.manualSearch{
@@ -173,5 +168,13 @@
 	.right-nav,
 	.left-nav{
 		display: none;
+	}
+
+	.news-body{
+		.slide-box{
+	        .news-box {
+	            padding: 0;
+	        }
+	    }
 	}
 }
