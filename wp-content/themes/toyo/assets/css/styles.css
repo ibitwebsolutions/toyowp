@@ -7341,6 +7341,10 @@ form .input-group input[type='text'] {
   height: auto;
 }
 
+.modal-backdrop {
+  background: rgba(255, 255, 255, 0.75);
+}
+
 #quickmenu {
   position: absolute;
   display: block;

@@ -293,16 +293,24 @@ else if(current_url==home_url+"cars/"){
 				
 				for(var i=0;i<result.result.length;i++){
 					if (window.screen.availWidth<600) {
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'>Veiw Details ></a></div></div>");	
 					}
 					else{
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'>Veiw Details ></a></div></div>");	
 					}
 				}
 			},
 			async: false
 		});
 	});
+
+	//Modal for view details
+	$('#tire-result').on('show.bs.modal', function (e) {
+	   var button = $(e.relatedTarget);
+	   var recipient = button.data('code');
+	   var modal = $(this)
+	   modal.find('.modal-body p').text('Ongoing Test \n \t Item Code: '+recipient);
+	})
 }
 else if(current_url==home_url+"dealers/"){
 	var dealers = [
