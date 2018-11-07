@@ -7286,12 +7286,10 @@ section .page .page-body p {
   height: 460px;
 }
 
-.btn-custom.btn-skip {
-  display: none;
-}
-
 .btn-custom {
+  display: inline-block;
   padding: 8px 25px;
+  margin-left: 20px;
   background-color: #3d8fc8;
   color: #fff;
   font-size: 18px;
@@ -7299,6 +7297,14 @@ section .page .page-body p {
 
 .btn-custom:hover {
   color: #fff;
+}
+
+.btn-custom.btn-skip {
+  display: none;
+}
+
+.btn-custom.btn-back {
+  display: none;
 }
 
 form .input-group {

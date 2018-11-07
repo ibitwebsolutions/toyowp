@@ -47,7 +47,17 @@ function wpdocs_register_my_custom_menu_page() {
       'manage_options',
       'toyo-api/maker.php',
       '',
-      'dashicons-screenoptions',
+      'dashicons-art',
+      null
+  );
+
+  add_menu_page(
+      __( 'Custom Menu Title', 'textdomain' ),
+      'Cars',
+      'manage_options',
+      'toyo-api/cars.php',
+      '',
+      'dashicons-admin-network',
       null
   );
 }

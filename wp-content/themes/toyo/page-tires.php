@@ -48,14 +48,17 @@
                                 <div class="size-box">
                                     <div class="size-options"></div>
                                 </div>
-                                <button class="sm-btn btn btn-custom pull-right btn-skip" id="skip">Skip</button>
+                                <div class="pull-right">
+                                    <button class="sm-btn btn btn-custom pull-left btn-back" id="back">Back</button>
+                                    <button class="sm-btn btn btn-custom pull-right btn-skip" id="skip">Skip</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-sm-12 result-box" style="display: none">
                             <div class="result-title">
                                 <p id="search-value">Isuzu MU-X</p>
-                                <a href="#">Change</a>
+                                <a href="<?php echo site_url(); ?>/tires/">Change</a>
                                 <span id="sublist">4 result for Isuzu MU-X</span>
                             </div>
                             <div class="slide-box">

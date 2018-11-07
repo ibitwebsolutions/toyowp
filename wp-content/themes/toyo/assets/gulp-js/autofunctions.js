@@ -55,12 +55,13 @@ else if(current_url==home_url+"tires/"){
 	changeOption("tire-width",Twidth);
 
 
-	$(".tire-width").click(function(e){
+	$(".size-options").on("click",".tire-width",function(e){
 		e.preventDefault();
 		sizeSet.push({"width":$(this).html()});
 		changeOption("tire-ratio",Tratio);
 		orig.src = aspectRatioIMG.src;
 		$('#skip').attr('style','display: inline-block');
+		$('#back').attr('style','display: inline-block');
 	});
 
 	$(".size-options").on("click", "a.tire-ratio", function(){
@@ -113,6 +114,30 @@ else if(current_url==home_url+"tires/"){
 		changeOption("tire-rim",Trim);
 		orig.src = rimIMG.src;
 		$('#skip').attr('style','display: none');
+	});
+
+	$('#back').click(function(){
+
+		var removeItem = sizeSet.length-1;
+		var key,$data;
+		if (removeItem==1) {
+			key="ratio";
+			$data = Tratio;
+			orig.src = aspectRatioIMG.src;
+		}else if(removeItem==0){
+			key="width";
+			$data = Twidth;
+			orig.src = img1.src;
+		}
+		changeOption("tire-"+key,$data);
+
+		sizeSet.splice(removeItem,removeItem);
+
+		if (removeItem==0) {
+			$('#back').attr('style','display: none');
+			$('#skip').attr('style','display: none');
+			sizeSet = [];
+		}
 	});
 
 

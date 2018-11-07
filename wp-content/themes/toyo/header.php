@@ -35,7 +35,7 @@
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
                         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                     ?>
-					<div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php echo $image[0]; ?>" alt=""></a></div>
+					<div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php echo $image[0]; ?>" alt="" class="img-responsive"></a></div>
 				</div>
 				<div class="col-sm-9 desktop-menu">
 					<div class="col-sm-12">
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-                
+
 			</div>
 		</div>
 	</header>
