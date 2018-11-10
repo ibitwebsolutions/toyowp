@@ -5,7 +5,7 @@
 	<div class="wpbody" role="main">
 		<div class="wpbody-content">
 			<div class="wrap">
-				<h1 class="wp-heading-inline">All Cars</h1>
+				<h1 class="wp-heading-inline">All Models</h1>
 				<a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew" class="page-title-action">Add New</a>
 				<hr class="wp-header-end">
 				<ul class="subsubsub">
@@ -20,11 +20,11 @@
 					<div id="post-body" class="metabox-holder columns-2">
 						<div id="post-body-content">
 							<div class="inside">
-								<p class="search-box" style="display: block;">
-									<label class="screen-reader-text" for="post-search-input">Search Field Groups:</label>
-									<input type="search" id="post-search-input" name="s" value="">
-									<input type="submit" id="search-submit" class="button" value="Search Maker">
-								</p>
+								<div class="acf-input-wrap">
+									<label class="screen-reader-text" for="post-search-input">Search Maker:</label>
+			                    	<select id="post-search-input" class="field-type car-select">
+									</select>
+			                    </div>
 							</div>
 
 							<div class="inside" style="display: inline-block;margin-top: 20px">
@@ -34,16 +34,15 @@
 								            <td id="cb" class="manage-column column-cb check-column">
 								                <label class="screen-reader-text">ID</label>
 								            </td>
-								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Makers</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-description" class="manage-column column-acf-fg-description hidden">Description</th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
-								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count">Models</th>
+								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
+								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
+								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </thead>
 
 								    <tbody id="the-list">
 								    	<?php
-								    		$sql = "select *,(SELECT COUNT(*) from tb_model where tb_model.car_id=tb_cars.car_id) as cn from tb_cars";
+								    		$sql = "select * from tb_model where car_id=1";
 										    $result = mysqli_query($conn, $sql);
 										    while($rows = mysqli_fetch_array($result)){
 								    	?>
@@ -52,14 +51,13 @@
 									                <label class="screen-reader-text">Select Common Fields</label>
 									            </th>
 									            <td class="title column-title has-row-actions column-primary page-title" data-colname="Title">
-									                <strong><a class="row-title" href="http://toyotires.localhost/wp-admin/admin.php?page=cars-model&car_id=<?php echo $rows['car_id']?>"><?php echo ucwords($rows['maker'])?></a></strong>
+									                <strong><a class="row-title" href="#"><?php echo ucwords($rows['model'])?></a></strong>
 
-									                <div class="row-actions"><span class="edit"><a href="#">Add Model</a> | </span><span class="acf-duplicate-field-group"><a title="Duplicate this item" href="#">Edit Maker</a></span></div>
+									                <div class="row-actions"><span class="edit"><span class="acf-duplicate-field-group"><a title="Duplicate this item" href="#">Edit Model</a></span></div>
 									                <button type="button" class="toggle-row"><span class="screen-reader-text">Show more details</span></button>
 									            </td>
-									            <td class="acf-fg-description column-acf-fg-description hidden" data-colname="Description"></td>
 									            <td class="acf-fg-status column-acf-fg-status" data-colname="Status"></td>
-									            <td class="acf-fg-count column-acf-fg-count" data-colname="Fields"><?php echo $rows['cn']?></td>
+									            <td class="acf-fg-count column-acf-fg-count" data-colname="Fields" style="text-align:center">ISUZU</td>
 									        </tr>
 								        <?php
 								    	    }
@@ -71,10 +69,9 @@
 								            <td id="cb" class="manage-column column-cb check-column">
 								                <label class="screen-reader-text">ID</label>
 								            </td>
-								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Makers</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-description" class="manage-column column-acf-fg-description hidden">Description</th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
-								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count">Models</th>
+								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
+								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
+								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </tfoot>
 
@@ -96,9 +93,22 @@
 	</div>
 </div>
 
-<script>
-	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
-</script>
+
 
 <script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/jquery.js"></script>
+<script>
+
+	var car_id = <?php echo ($_GET['car_id'])? $_GET['car_id']:'0'; ?>;
+	
+	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
+</script>
 <script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/index.js"></script>
+<script>
+
+	$(function () {
+		setTimeout(function(){ 
+			
+		}, 3500);
+	});
+	
+</script>

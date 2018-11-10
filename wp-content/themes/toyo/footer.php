@@ -20,7 +20,7 @@
 						        <thead>
 						            <tr>
 						                <td><b>TIRE SIZE</b></td>
-		        						<td><b>LOAD INDEX/ SPEED RATING</b></td>
+		        						<td><b>LOAD INDEX / SPEED RATING</b></td>
 						            </tr>
 						        </thead>
 						        <tbody>

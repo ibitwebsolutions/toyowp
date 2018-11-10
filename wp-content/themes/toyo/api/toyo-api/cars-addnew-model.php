@@ -34,13 +34,7 @@
 											                </td>
 											                <td class="acf-input">
 											                    <div class="acf-input-wrap">
-											                    	<select id="acf_fields-5be5a76354d5f-type" class="field-type" style="width: 100%">
-																		<option value="text" selected="selected" data-i="0">Text</option>
-																		<option value="textarea">Text Area</option>
-																		<option value="number">Number</option>
-																		<option value="range">Range</option>
-																		<option value="email">Email</option>
-																		<option value="url">Url</option>
+											                    	<select id="car-brand" class="field-type car-select" style="width: 100%">
 																	</select>
 											                    </div>
 											                </td>
@@ -94,3 +88,10 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
+</script>
+
+<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/jquery.js"></script>
+<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/index.js"></script>

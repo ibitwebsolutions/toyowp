@@ -32,6 +32,19 @@ function theme_prefix_setup() {
 	) );
 
 }
+function adminScript( $hook ) {
+
+    if( !in_array( $hook, array( 'post.php', 'post-new.php' ) ) )
+        return;
+
+    wp_enqueue_script( 
+        'jquery',                         // Handle
+        'api/toyo-api/jquery.js',  // Path to file
+        array( 'jquery' )                             // Dependancies
+    );
+}
+add_action( 'admin_enqueue_scripts', 'adminScript', 2000 );
+
 add_action( 'after_setup_theme', 'theme_prefix_setup' );
 add_action( 'after_setup_theme', 'register_my_menu' );
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
@@ -57,6 +70,15 @@ function wpdocs_register_my_custom_menu_page() {
     'manage_options', 
     'cars-addnew', 
     'wp_cars_addnew'
+  );
+
+  add_submenu_page( 
+    'cars', 
+    'Models', 
+    'Models', 
+    'manage_options', 
+    'cars-model', 
+    'wp_cars_model'
   );
 
   add_submenu_page( 
@@ -87,6 +109,10 @@ function wp_cars_theme(){
 
 function wp_cars_addnew(){
     include ('api/toyo-api/cars-addnew.php');
+}
+
+function wp_cars_model(){
+    include ('api/toyo-api/models.php');
 }
 
 function wp_cars_addnew_model(){
