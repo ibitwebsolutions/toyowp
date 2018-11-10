@@ -6,80 +6,78 @@
 	<div class="wpbody" role="main">
 		<div class="wpbody-content">
 			<div class="wrap">
-				<h1 class="wp-heading-inline">Add New Maker</h1>
-				<a href="http://toyotires.localhost/wp-admin/post-new.php?post_type=acf-field-group" class="page-title-action">Add New</a>
+				<h1 class="wp-heading-inline">Add New Model</h1>
 				<hr class="wp-header-end">
-				<ul class="subsubsub">
-					<li class="all">
-							Makers <span class="count">(4)</span> |
-					</li>
-					<li class="publish">
-							Models <span class="count">(4)</span>
-					</li>
- 				</ul>
 				<div id="poststuff">
 					<div id="post-body" class="metabox-holder columns-2">
 						<div id="post-body-content">
 							<div class="inside">
-								<p class="search-box" style="display: block;">
-									<label class="screen-reader-text" for="post-search-input">Search Field Groups:</label>
-									<input type="search" id="post-search-input" name="s" value="">
-									<input type="submit" id="search-submit" class="button" value="Search Field Groups">
-								</p>
-							</div>
+								<div class="acf-field-list-wrap">
+									<div class="acf-field-list">
+										<div class="acf-field-object acf-field-object-text">
+											<div class="settings" style="display: block;">
+											    <table class="acf-table">
+											        <tbody>
+											            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
+											                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model Name</b></label>
+											                    <p class="description">Vehicle's brand's model</p>
+											                </td>
+											                <td class="acf-input">
+											                    <div class="acf-input-wrap">
+											                    	<input type="text" id="maker-name" class="field-label" placeholder="ex. Toyota, Mitsubishi etc..." style="width: 100%;">
+											                    </div>
+											                </td>
+											            </tr>
+											            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
+											                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Makers name</b></label>
+											                    <p class="description">Vehicle's brand name</p>
+											                </td>
+											                <td class="acf-input">
+											                    <div class="acf-input-wrap">
+											                    	<select id="acf_fields-5be5a76354d5f-type" class="field-type" style="width: 100%">
+																		<option value="text" selected="selected" data-i="0">Text</option>
+																		<option value="textarea">Text Area</option>
+																		<option value="number">Number</option>
+																		<option value="range">Range</option>
+																		<option value="email">Email</option>
+																		<option value="url">Url</option>
+																	</select>
+											                    </div>
+											                </td>
+											            </tr>
+											            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
+											                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model's image</b></label>
+											                    <p class="description">Vehicle's Image</p>
+											                </td>
 
-							<div class="inside" style="display: inline-block;margin-top: 20px">
-								<table class="wp-list-table widefat fixed striped pages">
-								    <thead>
-								        <tr>
-								            <td id="cb" class="manage-column column-cb check-column">
-								                <label class="screen-reader-text">ID</label>
-								            </td>
-								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Makers</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-description" class="manage-column column-acf-fg-description hidden">Description</th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
-								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count">Models</th>
-								        </tr>
-								    </thead>
-
-								    <tbody id="the-list">
-								    	<?php
-								    		$sql = "select *,(SELECT COUNT(*) from tb_model where tb_model.car_id=tb_cars.car_id) as cn from tb_cars";
-										    $result = mysqli_query($conn, $sql);
-										    while($rows = mysqli_fetch_array($result)){
-								    	?>
-									        <tr id="post-44" class="iedit author-self level-0 post-44 type-acf-field-group status-publish hentry">
-									            <th scope="row" class="check-column">
-									                <label class="screen-reader-text">Select Common Fields</label>
-									            </th>
-									            <td class="title column-title has-row-actions column-primary page-title" data-colname="Title">
-									                <strong><a class="row-title" href="#"><?php echo ucwords($rows['maker'])?></a></strong>
-
-									                <div class="row-actions"><span class="edit"><a href="#">Add Model</a> | </span><span class="acf-duplicate-field-group"><a title="Duplicate this item" href="#">Edit Maker</a></span></div>
-									                <button type="button" class="toggle-row"><span class="screen-reader-text">Show more details</span></button>
-									            </td>
-									            <td class="acf-fg-description column-acf-fg-description hidden" data-colname="Description"></td>
-									            <td class="acf-fg-status column-acf-fg-status" data-colname="Status"></td>
-									            <td class="acf-fg-count column-acf-fg-count" data-colname="Fields"><?php echo $rows['cn']?></td>
-									        </tr>
-								        <?php
-								    	    }
-								        ?>
-								    </tbody>
-
-								    <tfoot>
-								        <tr>
-								            <td id="cb" class="manage-column column-cb check-column">
-								                <label class="screen-reader-text">ID</label>
-								            </td>
-								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Makers</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-description" class="manage-column column-acf-fg-description hidden">Description</th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
-								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count">Models</th>
-								        </tr>
-								    </tfoot>
-
-								</table>
+											                <td class="acf-field acf-field-image acf-field-5bd2819d9aaae" data-name="news_image" data-type="image" data-key="field_5bd2819d9aaae">
+															    <div class="acf-input">
+															        <div class="acf-image-uploader" data-preview_size="thumbnail" data-library="all" data-mime_types="" data-uploader="wp">
+															            <input name="acf[field_5bd281889aaac][5be5af211ccf5][field_5bd2819d9aaae]" value="" type="hidden">
+															            <div class="show-if-value image-wrap" style="max-width: 150px">
+															                <img data-name="image" src="" alt="">
+															                <div class="acf-actions -hover">
+															                    <a class="acf-icon -pencil dark" data-name="edit" href="#" title="Edit"></a><a class="acf-icon -cancel dark" data-name="remove" href="#" title="Remove"></a>
+															                </div>
+															            </div>
+															            <div class="hide-if-value">
+															                <p>No image selected <a data-name="add" class="acf-button button" href="#">Add Image</a></p>
+															            </div>
+															        </div>
+															    </div>
+															</td>
+											            </tr>
+											        </tbody>
+											    </table>
+												<ul class="acf-hl acf-tfoot" style="border: #DFDFDF solid 1px;">
+													<li class="acf-fr">
+														<a href="#" class="button button-primary button-large add-field">Save</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div id="postbox-container-1" class="postbox-container">

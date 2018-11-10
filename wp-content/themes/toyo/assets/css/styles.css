@@ -7341,6 +7341,18 @@ form .input-group input[type='text'] {
   height: auto;
 }
 
+.modal-content .modal-body #tire-img {
+  position: relative;
+  width: 267px;
+  height: 400px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.modal-content .modal-body p {
+  margin-top: 20px;
+}
+
 .modal-backdrop {
   background: rgba(255, 255, 255, 0.75);
 }

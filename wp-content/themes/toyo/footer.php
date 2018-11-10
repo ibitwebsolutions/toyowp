@@ -5,7 +5,17 @@
     <div class="modal-content">
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <p></p>
+	        <div class="row">
+		        <div class="col-sm-3">
+		        	<div id="tire-img"></div>
+		        </div>
+		        <div class="col-sm-8">
+		        	<img src="" alt="" id="tire-logo" class="img-responsive">
+		        	<div class="col-sm-offset-1">
+		        		<p></p>
+		        	</div>
+		        </div>
+	        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

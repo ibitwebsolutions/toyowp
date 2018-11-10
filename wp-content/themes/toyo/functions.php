@@ -90,7 +90,7 @@ function wp_cars_addnew(){
 }
 
 function wp_cars_addnew_model(){
-    include ('api/toyo-api/cars-addnew.php');
+    include ('api/toyo-api/cars-addnew-model.php');
 }
 
 function wp_patterns_theme(){

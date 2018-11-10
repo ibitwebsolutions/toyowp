@@ -221,7 +221,17 @@ form{
 	// background: rgba($white,0.75);
 
 	.modal-body{
+		#tire-img{
+			position: relative;
+			width: 267px;
+			height: 400px;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+		}
 
+		p{
+			margin-top: 20px;
+		}
 	}
 }
 
