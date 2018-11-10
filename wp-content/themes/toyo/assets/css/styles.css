@@ -7289,7 +7289,6 @@ section .page .page-body p {
 .btn-custom {
   display: inline-block;
   padding: 8px 25px;
-  margin-left: 20px;
   background-color: #3d8fc8;
   color: #fff;
   font-size: 18px;
@@ -7301,6 +7300,7 @@ section .page .page-body p {
 
 .btn-custom.btn-skip {
   display: none;
+  margin-left: 20px;
 }
 
 .btn-custom.btn-back {
@@ -7344,13 +7344,18 @@ form .input-group input[type='text'] {
 .modal-content .modal-body #tire-img {
   position: relative;
   width: 267px;
-  height: 400px;
+  height: 360px;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
 .modal-content .modal-body p {
   margin-top: 20px;
+}
+
+.modal-content .modal-body p > span {
+  display: block;
+  margin-bottom: 15px;
 }
 
 .modal-backdrop {

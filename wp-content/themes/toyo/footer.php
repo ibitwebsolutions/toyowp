@@ -13,6 +13,24 @@
 		        	<img src="" alt="" id="tire-logo" class="img-responsive">
 		        	<div class="col-sm-offset-1">
 		        		<p></p>
+
+
+		        		<div class="table-responsive">
+						    <table class="table table-bordered text-center">
+						        <thead>
+						            <tr>
+						                <td><b>TIRE SIZE</b></td>
+		        						<td><b>LOAD INDEX/ SPEED RATING</b></td>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td class="size"></td>
+		        						<td class="lisr"></td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>
 		        	</div>
 		        </div>
 	        </div>

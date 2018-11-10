@@ -58,7 +58,7 @@
                         <div class="col-sm-12 result-box" style="display: none">
                             <div class="result-title">
                                 <p id="search-value">Isuzu MU-X</p>
-                                <a href="<?php echo site_url(); ?>/tires/">New Search</a>
+                                <a href="<?php echo site_url(); ?>/tires/">NewSearch</a>
                                 <span id="sublist">4 result for Isuzu MU-X</span>
                             </div>
                             <div class="slide-box">

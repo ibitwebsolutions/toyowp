@@ -50,7 +50,9 @@ else if ($fn==2){
                                 "item_code"=>$rowz['item_code'],
                                 "pattern_code"=>$rowz['pattern_code'],
                                 "pattern_desc"=>$rowz['pattern_desc'],
-                                "pattern_fullDesc"=>$rowz['pattern_fullDesc']
+                                "pattern_fullDesc"=>$rowz['pattern_fullDesc'],
+                                "item_size"=>$rowz['item_size'],
+                                "item_LISR"=>$rowz['item_LISR']
                             )
                         );
             }
@@ -65,11 +67,14 @@ else if ($fn==3){
         
         $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
         $result = mysqli_query($conn, $sql);
-        while($row = mysqli_fetch_array($result)){
+        while($rowz = mysqli_fetch_array($result)){
             array_push($resultOITM , array(
-                    "item_code"=>$row['item_code'],
-                    "pattern_code"=>$row['pattern_code'],
-                    "pattern_desc"=>$row['pattern_desc']
+                    "item_code"=>$rowz['item_code'],
+                    "pattern_code"=>$rowz['pattern_code'],
+                    "pattern_desc"=>$rowz['pattern_desc'],
+                    "pattern_fullDesc"=>$rowz['pattern_fullDesc'],
+                    "item_size"=>$rowz['item_size'],
+                    "item_LISR"=>$rowz['item_LISR']
                 )
             );
         }
@@ -81,14 +86,17 @@ else if ($fn==4){
         $resultOITM = array();
         $desc = $_POST['term'];
 
-        if($des){
+        if($desc){
             $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
             $result = mysqli_query($conn, $sql);
-            while($row = mysqli_fetch_array($result)){
+            while($rowz = mysqli_fetch_array($result)){
                 array_push($resultOITM , array(
-                        "item_code"=>$row['item_code'],
-                        "pattern_code"=>$row['pattern_code'],
-                        "pattern_desc"=>$row['pattern_desc']
+                        "item_code"=>$rowz['item_code'],
+                        "pattern_code"=>$rowz['pattern_code'],
+                        "pattern_desc"=>$rowz['pattern_desc'],
+                        "pattern_fullDesc"=>$rowz['pattern_fullDesc'],
+                        "item_size"=>$rowz['item_size'],
+                        "item_LISR"=>$rowz['item_LISR']
                     )
                 );
             }

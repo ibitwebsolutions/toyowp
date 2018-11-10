@@ -69,3 +69,21 @@ function carData(maker,model){
 		model.append("<option data-id='"+CarsList[0].models[x].model_id+"' data-index='"+x+"'>"+CarsList[0].models[x].name+"</option>");
 	}
 }
+
+//Modal for view details
+$('#tire-result').on('show.bs.modal', function (e) {
+   var button = $(e.relatedTarget);
+   var recipient = button.data('code');
+   var size = button.data('size');
+   var lisr = button.data('lisr');
+   var desc = button.prev().html();
+   var img = button.prev().prev().prev().css('background-image');
+   var logo = button.prev().prev().find('img').attr('src');
+   var modal = $(this);
+
+   modal.find('.modal-body #tire-img').css({'background-image':img});
+   modal.find('.modal-body #tire-logo').attr('src',logo);
+   modal.find('.modal-body p').html(desc);
+   modal.find('.modal-body table .size').html(size);
+   modal.find('.modal-body table .lisr').html(lisr);
+});
