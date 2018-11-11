@@ -20,11 +20,11 @@
 											        <tbody>
 											            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
 											                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model Name</b></label>
-											                    <p class="description">Vehicle's brand's model</p>
+											                    <p class="description">Note: Don't use SPACE use - for two words name</p>
 											                </td>
 											                <td class="acf-input">
 											                    <div class="acf-input-wrap">
-											                    	<input type="text" id="maker-name" class="field-label" placeholder="ex. Toyota, Mitsubishi etc..." style="width: 100%;">
+											                    	<input type="text" id="maker-name" class="field-label" placeholder="ex. Toyota, Mitsubishi, Hi-Ace etc..." style="width: 100%;">
 											                    </div>
 											                </td>
 											            </tr>
@@ -34,14 +34,13 @@
 											                </td>
 											                <td class="acf-input">
 											                    <div class="acf-input-wrap">
-											                    	<select id="car-brand" class="field-type car-select" style="width: 100%">
-																	</select>
+											                    	<select id="car-brand" class="field-type car-select" style="width: 100%"></select>
 											                    </div>
 											                </td>
 											            </tr>
 											            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
 											                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model's image</b></label>
-											                    <p class="description">Vehicle's Image</p>
+											                    <p class="description">Note: Upload image with same name <br>of the model name don't use space same as above.</p>
 											                </td>
 
 											                <td class="acf-field acf-field-image acf-field-5bd2819d9aaae" data-name="news_image" data-type="image" data-key="field_5bd2819d9aaae">
@@ -89,9 +88,7 @@
 	</div>
 </div>
 
-<script>
-	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
-</script>
+<?php 
 
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/jquery.js"></script>
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/index.js"></script>
+	include ("footer.php");
+?>

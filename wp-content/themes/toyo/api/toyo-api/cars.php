@@ -96,9 +96,7 @@
 	</div>
 </div>
 
-<script>
-	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
-</script>
+<?php 
 
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/jquery.js"></script>
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/index.js"></script>
+	include ("footer.php");
+?>

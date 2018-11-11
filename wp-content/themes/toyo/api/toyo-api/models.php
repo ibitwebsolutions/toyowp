@@ -21,9 +21,8 @@
 						<div id="post-body-content">
 							<div class="inside">
 								<div class="acf-input-wrap">
-									<label class="screen-reader-text" for="post-search-input">Search Maker:</label>
-			                    	<select id="post-search-input" class="field-type car-select">
-									</select>
+									<div class="field-type" style="display: inline-block;">Search Maker:</div>
+			                    	<select id="post-search-input" class="field-type car-select" style="display: inline-block;"></select>
 			                    </div>
 							</div>
 
@@ -40,29 +39,7 @@
 								        </tr>
 								    </thead>
 
-								    <tbody id="the-list">
-								    	<?php
-								    		$sql = "select * from tb_model where car_id=1";
-										    $result = mysqli_query($conn, $sql);
-										    while($rows = mysqli_fetch_array($result)){
-								    	?>
-									        <tr id="post-44" class="iedit author-self level-0 post-44 type-acf-field-group status-publish hentry">
-									            <th scope="row" class="check-column">
-									                <label class="screen-reader-text">Select Common Fields</label>
-									            </th>
-									            <td class="title column-title has-row-actions column-primary page-title" data-colname="Title">
-									                <strong><a class="row-title" href="#"><?php echo ucwords($rows['model'])?></a></strong>
-
-									                <div class="row-actions"><span class="edit"><span class="acf-duplicate-field-group"><a title="Duplicate this item" href="#">Edit Model</a></span></div>
-									                <button type="button" class="toggle-row"><span class="screen-reader-text">Show more details</span></button>
-									            </td>
-									            <td class="acf-fg-status column-acf-fg-status" data-colname="Status"></td>
-									            <td class="acf-fg-count column-acf-fg-count" data-colname="Fields" style="text-align:center">ISUZU</td>
-									        </tr>
-								        <?php
-								    	    }
-								        ?>
-								    </tbody>
+								    <tbody id="the-list"></tbody>
 
 								    <tfoot>
 								        <tr>
@@ -91,24 +68,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>	
 
+<?php 
 
-
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/jquery.js"></script>
-<script>
-
-	var car_id = <?php echo ($_GET['car_id'])? $_GET['car_id']:'0'; ?>;
-	
-	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
-</script>
-<script type="text/javascript" src="<?=get_template_directory_uri()?>/api/toyo-api/index.js"></script>
-<script>
-
-	$(function () {
-		setTimeout(function(){ 
-			
-		}, 3500);
-	});
-	
-</script>
+	include ("footer.php");
+?>

@@ -21,7 +21,7 @@
 												        <tbody>
 												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
 												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Maker Name</b></label>
-												                    <p class="description">Vehicle's brand name</p>
+												                    <p class="description">Note: Don't use SPACE use - for two words name</p>
 												                </td>
 												                <td class="acf-input">
 												                    <div class="acf-input-wrap">
@@ -58,3 +58,8 @@
 	</div>
 </div>
 
+
+<?php 
+
+	include ("footer.php");
+?>
