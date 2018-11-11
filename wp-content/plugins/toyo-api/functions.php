@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -48,3 +49,6 @@ if(isset($_POST['pattern_update'])) {
         }
     }
 }
+
+
+

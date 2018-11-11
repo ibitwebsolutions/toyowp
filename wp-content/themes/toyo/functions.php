@@ -56,7 +56,7 @@ if(!is_admin()) {
 function wpdocs_register_my_custom_menu_page() {
   add_menu_page(
     'Cars Page', 
-    'Cars', 
+    'Toyo Cars', 
     'manage_options', 
     'cars', 
     'wp_cars_theme',
@@ -92,11 +92,20 @@ function wpdocs_register_my_custom_menu_page() {
 
   add_menu_page(
     'Patterns Page', 
-    'Patterns', 
+    'Toyo Patterns', 
     'manage_options', 
     'pattern', 
     'wp_patterns_theme',
     'dashicons-art'
+  );
+
+  add_menu_page(
+    'Image Page', 
+    'Toyo Images', 
+    'manage_options', 
+    'toyo-images', 
+    'wp_toyoimages_theme',
+    'dashicons-format-gallery'
   );
 }
 
@@ -121,4 +130,8 @@ function wp_cars_addnew_model(){
 
 function wp_patterns_theme(){
     include ('api/toyo-api/maker.php');
+}
+
+function wp_toyoimages_theme(){
+    include ('api/toyo-api/bulk-image.php');
 }

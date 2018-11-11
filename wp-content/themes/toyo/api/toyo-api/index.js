@@ -28,7 +28,7 @@ if (car_id>0) {
         	"<div class='row-actions'><span class='edit'><span class='acf-duplicate-field-group'><a title='Duplicate this item' href='#'>Edit Model</a></span></div>"+
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
-    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status'></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
 	}
 
@@ -97,7 +97,7 @@ if (car_id>0) {
         	"<div class='row-actions'><span class='edit'><span class='acf-duplicate-field-group'><a title='Duplicate this item' href='#'>Edit Model</a></span></div>"+
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
-    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status'></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
 	}
 }
@@ -134,7 +134,7 @@ $('.car-select').change(function(){
         	"<div class='row-actions'><span class='edit'><span class='acf-duplicate-field-group'><a title='Duplicate this item' href='#'>Edit Model</a></span></div>"+
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
-    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status'></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
 	}
 })

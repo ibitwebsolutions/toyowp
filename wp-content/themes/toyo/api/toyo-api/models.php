@@ -1,5 +1,6 @@
 <?php
     include 'functions.php';
+    include 'head.php';
 ?>
 <div class="wpcontent">
 	<div class="wpbody" role="main">
@@ -34,7 +35,7 @@
 								                <label class="screen-reader-text">ID</label>
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
+								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </thead>
@@ -47,7 +48,7 @@
 								                <label class="screen-reader-text">ID</label>
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center"><i class="acf-icon -dot-3 small acf-js-tooltip" title="Status"></i></th>
+								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </tfoot>

@@ -108,10 +108,10 @@ else if(current_url==home_url+"tires/"){
 				
 				for(var i=0;i<result.result.length;i++){
 					if (window.screen.availWidth<600) {
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 					else{
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 				}
 			},
@@ -193,10 +193,10 @@ else if(current_url==home_url+"tires/"){
 				
 				for(var i=0;i<result.result.length;i++){
 					if (window.screen.availWidth<600) {
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 					else{
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 				}
 			},
@@ -303,10 +303,10 @@ else if(current_url==home_url+"cars/"){
 				
 				for(var i=0;i<result.result.length;i++){
 					if (window.screen.availWidth<600) {
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img class='img-responsive' src='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_desc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+" data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 					else{
-						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"assets/img/tire-pattern/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
+						$('.result-slide').slick('slickAdd',"<div><div class='result-item text-center'><div class='tire-img' style='background-image: url("+templateUrl+"server/tires/files/"+result.result[i].pattern_code+".png);'></div><div class='tire-logo'><img data-lazy='"+templateUrl+"server/logos/files/"+result.result[i].pattern_code+"-logo.png' alt=''> </div><p>"+result.result[i].pattern_fullDesc+"</p><a href='#' class='btn-custom' data-toggle='modal' data-target='#tire-result' data-code='"+result.result[i].item_code+"'' data-size='"+result.result[i].item_size+"' data-LISR='"+result.result[i].item_LISR+"'>Veiw Details ></a></div></div>");	
 					}
 				}
 			},
@@ -427,8 +427,8 @@ function carSlide(carImg,carThumb,makerIndex){
     }
 	
 	for(var x=0;x<CarsList[index].models.length;x++){
-		CarImg.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
-		CarThumb.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
+		CarImg.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"server/models/files/"+CarsList[index].maker+"-"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
+		CarThumb.slick('slickAdd',"<div><img data-lazy='"+templateUrl+"server/models/files/"+CarsList[index].maker+"-"+CarsList[index].models[x].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].name+"'/></div>");
 	}
     
 

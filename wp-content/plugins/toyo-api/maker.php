@@ -1,8 +1,41 @@
 <?php
     include 'functions.php';
 ?>
-<br>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<div class="wpcontent">
+    <div class="wpbody" role="main">
+        <div class="wpbody-content">
+            <div class="wrap">
+                <h1 class="wp-heading-inline">All Pattern</h1>
+                <a href="http://toyotires.localhost/wp-admin/post-new.php?post_type=acf-field-group" class="page-title-action">Add New</a>
+                <hr class="wp-header-end">
+
+                <ul class="subsubsub">
+                    <li class="all">
+                        <a href="http://toyotires.localhost/wp-admin/users.php" class="current">All Cars
+                            <span class="count">(2)</span>
+                        </a> |
+                    </li>
+                    <li class="approved">
+                        <a href="http://toyotires.localhost/wp-admin/users.php?status=approved">Assigned 
+                            <span class="count">(2)</span>
+                        </a> |
+                    </li>
+                    <li class="awaiting_admin_review">
+                        <a href="http://toyotires.localhost/wp-admin/users.php?status=awaiting_admin_review">Un Assigned 
+                            <span class="count">(0)</span>
+                        </a> |
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 <a href="<?php echo site_url(); ?>/wp-admin/admin.php?page=toyo-api%2Fmaker.php" class="btn btn-primary">Add Pattern</a>
 <h1>Pattern</h1>
@@ -17,7 +50,7 @@
                 <form action="" method="POST">
                     <input type="hidden" name="pattern_id" value="<?php echo $row['pattern_id']; ?>">
                     <div class="form-group">
-                        <label for="pattern_name">Pattern Name</label><br>
+                        <label for="pattern_name">Pattern Nameszz</label><br>
                         <input type="text" class="form-control" id="pattern_name" name="pattern_name" value="<?php echo $row['pattern']; ?>">
                     </div>
                     <div class="form-group">

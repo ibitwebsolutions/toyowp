@@ -6,7 +6,8 @@
 		<div class="wpbody-content">
 			<div class="wrap">
 				<h1 class="wp-heading-inline">All Cars</h1>
-				<a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew" class="page-title-action">Add New</a>
+				<!-- <a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew" class="page-title-action">Add New</a> -->
+				<a href="<?php menu_page_url('cars-addnew'); ?>" class="page-title-action">Add New</a>
 				<hr class="wp-header-end">
 				<ul class="subsubsub">
 					<li class="all">
@@ -52,7 +53,7 @@
 									                <label class="screen-reader-text">Select Common Fields</label>
 									            </th>
 									            <td class="title column-title has-row-actions column-primary page-title" data-colname="Title">
-									                <strong><a class="row-title" href="http://toyotires.localhost/wp-admin/admin.php?page=cars-model&car_id=<?php echo $rows['car_id']?>"><?php echo ucwords($rows['maker'])?></a></strong>
+									                <strong><a class="row-title" href="<?php menu_page_url('cars-model'); ?>&car_id=<?php echo $rows['car_id']?>"><?php echo ucwords($rows['maker'])?></a></strong>
 
 									                <div class="row-actions"><span class="edit"><a href="#">Add Model</a> | </span><span class="acf-duplicate-field-group"><a title="Duplicate this item" href="#">Edit Maker</a></span></div>
 									                <button type="button" class="toggle-row"><span class="screen-reader-text">Show more details</span></button>
