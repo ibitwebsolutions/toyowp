@@ -391,6 +391,11 @@
                     removeNode();
                 }
             }
+
+            // Callback for multiple file deletion:
+            // multiDestroy: function (e) {},
+            // // Finished callback for multiple file deletion:
+            // multiDestroyFinished: function (e) {}
         },
 
         _resetFinishedDeferreds: function () {
@@ -601,6 +606,22 @@
                         .prop('checked', false);
                 }
             });
+            // this._on(fileUploadButtonBar.find('.delete'), {
+            //     click: function (e) {
+            //         if(this._trigger('multiDestroy')){                      
+            //             if (e.isDefaultPrevented()) {
+            //                 return false;
+            //             }
+            //             e.preventDefault();
+            //             filesList.find('.toggle:checked')
+            //                 .closest('.template-download')
+            //                 .find('.delete').click();
+            //             fileUploadButtonBar.find('.toggle')
+            //                 .prop('checked', false);
+            //             this._trigger('multiDestroyFinished');
+            //         }
+            //     }
+            // });
             this._on(fileUploadButtonBar.find('.toggle'), {
                 change: function (e) {
                     filesList.find('.toggle').prop(

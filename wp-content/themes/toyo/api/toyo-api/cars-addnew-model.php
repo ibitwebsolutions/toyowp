@@ -18,14 +18,8 @@
 				<div id="poststuff">
 					<div id="post-body" class="metabox-holder columns-2">
 						<div id="post-body-content">
-							<div class="inside wrap">
-								<h2 class="nav-tab-wrapper um-nav-tab-wrapper">
-									<a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew-model&amp;tab=single" class="nav-tab nav-tab-active">Single Add</a>
-									<a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew-model&amp;tab=bulk" class="nav-tab ">Bulk Add</a>
-								</h2>
-							</div>
 
-							<div id="tabSingle" style="display: <?php echo ($_GET['tab']=='single' || $_GET['tab']=='')? 'block':'none'?>">
+							<div id="tabSingle">
 								<div class="inside">
 									<div class="acf-field-list-wrap">
 										<div class="acf-field-list">
@@ -53,28 +47,6 @@
 												                    </div>
 												                </td>
 												            </tr>
-												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
-												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model's image</b></label>
-												                    <p class="description">Note: Upload image with same name <br>of the model name don't use space same as above.</p>
-												                </td>
-
-												                <td class="acf-field acf-field-image acf-field-5bd2819d9aaae" data-name="news_image" data-type="image" data-key="field_5bd2819d9aaae">
-																    <div class="acf-input">
-																        <div class="acf-image-uploader" data-preview_size="thumbnail" data-library="all" data-mime_types="" data-uploader="wp">
-																            <input name="acf[field_5bd281889aaac][5be5af211ccf5][field_5bd2819d9aaae]" value="" type="hidden">
-																            <div class="show-if-value image-wrap" style="max-width: 150px">
-																                <img data-name="image" src="" alt="">
-																                <div class="acf-actions -hover">
-																                    <a class="acf-icon -pencil dark" data-name="edit" href="#" title="Edit"></a><a class="acf-icon -cancel dark" data-name="remove" href="#" title="Remove"></a>
-																                </div>
-																            </div>
-																            <div class="hide-if-value">
-																                <p>No image selected <a data-name="add" class="acf-button button" href="#">Add Image</a></p>
-																            </div>
-																        </div>
-																    </div>
-																</td>
-												            </tr>
 												        </tbody>
 												    </table>
 													<ul class="acf-hl acf-tfoot" style="border: #DFDFDF solid 1px;">
@@ -82,116 +54,6 @@
 															<a href="#" class="button button-primary button-large add-field">Save</a>
 														</li>
 													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div id="tabBulk" style="display: <?php echo ($_GET['tab']=='bulk')? 'block':'none'?>">
-								<div class="inside">
-									<div class="acf-field-list-wrap">
-										<div class="acf-field-list">
-											<div class="acf-field-object acf-field-object-text">
-												<div class="settings" style="display: block;">
-												    <table class="acf-table">
-												        <tbody>
-												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
-												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Model's List</b></label>
-												                    <p class="description">Note: Upload CSV file with single field.</p>
-												                </td>
-
-												                <td class="acf-field acf-field-image acf-field-5bd2819d9aaae" data-name="news_image" data-type="image" data-key="field_5bd2819d9aaae">
-																    <div class="acf-input">
-																        <div class="acf-image-uploader" data-preview_size="thumbnail" data-library="all" data-mime_types="" data-uploader="wp">
-																            <input name="acf[field_5bd281889aaac][5be5af211ccf5][field_5bd2819d9aaae]" value="" type="hidden">
-																            <div class="show-if-value image-wrap" style="max-width: 150px">
-																                <img data-name="image" src="" alt="">
-																                <div class="acf-actions -hover">
-																                    <a class="acf-icon -pencil dark" data-name="edit" href="#" title="Edit"></a><a class="acf-icon -cancel dark" data-name="remove" href="#" title="Remove"></a>
-																                </div>
-																            </div>
-																            <div class="hide-if-value">
-																                <p>No file selected <a data-name="add" class="acf-button button" href="#">Add CSV File</a></p>
-																            </div>
-																        </div>
-																    </div>
-																</td>
-												            </tr>
-												        </tbody>
-												    </table>
-													<ul class="acf-hl acf-tfoot" style="border: #DFDFDF solid 1px;">
-														<li class="acf-fr">
-															<a href="#" class="button button-primary button-large add-field">Save</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-								<div class="inside">
-									<div class="acf-field-list-wrap">
-										<div class="acf-field-list">
-											<div class="acf-field-object acf-field-object-text">
-												<div class="settings" style="display: block;">
-												    <table class="acf-table">
-												        <tbody>
-												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
-												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Multiple Upload</b></label>
-												                    <p class="description">Note: Multiple image upload of models and should be named with model name or same name in the CSV with no space and use dash(-) instead.</p>
-												                </td>
-												            </tr>
-												             <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
-												                <td class="acf-label container">
-												                    <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-																        <!-- Redirect browsers with JavaScript disabled to the origin page -->
-																        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-																        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-																        <div class="row fileupload-buttonbar">
-																            <div class="col-lg-8">
-																                <!-- The fileinput-button span is used to style the file input field as button -->
-																                <span class="btn btn-success fileinput-button">
-																                    <i class="glyphicon glyphicon-plus"></i>
-																                    <span>Add files...</span>
-																                    <input type="file" name="files[]" multiple>
-																                </span>
-																                <button type="submit" class="btn btn-primary start">
-																                    <i class="glyphicon glyphicon-upload"></i>
-																                    <span>Start upload</span>
-																                </button>
-																                <button type="reset" class="btn btn-warning cancel">
-																                    <i class="glyphicon glyphicon-ban-circle"></i>
-																                    <span>Cancel upload</span>
-																                </button>
-																                <button type="button" class="btn btn-danger delete">
-																                    <i class="glyphicon glyphicon-trash"></i>
-																                    <span>Delete</span>
-																                </button>
-																                <input type="checkbox" class="toggle">
-																                <!-- The global file processing state -->
-																                <span class="fileupload-process"></span>
-																            </div>
-																            <!-- The global progress state -->
-																            <div class="col-lg-5 fileupload-progress fade">
-																                <!-- The global progress bar -->
-																                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-																                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-																                </div>
-																                <!-- The extended global progress state -->
-																                <div class="progress-extended">&nbsp;</div>
-																            </div>
-																        </div>
-																        <!-- The table listing the files available for upload/download -->
-																        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-																    </form>
-												                </td>
-												            </tr>
-												        </tbody>
-												    </table>
 												</div>
 											</div>
 										</div>

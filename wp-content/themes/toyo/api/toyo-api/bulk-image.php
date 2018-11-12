@@ -41,7 +41,7 @@
 												            </tr>
 												             <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
 												                <td class="acf-label container">
-												                    <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+												                    <form id="fileupload" class="fupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
 																        <!-- Redirect browsers with JavaScript disabled to the origin page -->
 																        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
 																        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -70,13 +70,20 @@
 																                <span class="fileupload-process"></span>
 																            </div>
 																            <!-- The global progress state -->
-																            <div class="col-lg-5 fileupload-progress fade">
+																            <div class="col-lg-4 fileupload-progress fade">
 																                <!-- The global progress bar -->
 																                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
 																                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
 																                </div>
 																                <!-- The extended global progress state -->
 																                <div class="progress-extended">&nbsp;</div>
+																            </div>
+
+																            <div class="col-lg-12" style="margin-bottom: 20px">
+																		        <div class="acf-input-wrap">
+																					<div class="field-type" style="display: inline-block;">Search:</div>
+															                    	<input type="text" class="field-type search-upload-models">
+															                    </div>
 																            </div>
 																        </div>
 																        <!-- The table listing the files available for upload/download -->
@@ -145,6 +152,13 @@
 																                <!-- The extended global progress state -->
 																                <div class="progress-extended">&nbsp;</div>
 																            </div>
+
+																            <div class="col-lg-12" style="margin-bottom: 20px">
+																		        <div class="acf-input-wrap">
+																					<div class="field-type" style="display: inline-block;">Search:</div>
+															                    	<input type="text" class="field-type search-upload-tires">
+															                    </div>
+																            </div>
 																        </div>
 																        <!-- The table listing the files available for upload/download -->
 																        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
@@ -212,6 +226,13 @@
 																                <!-- The extended global progress state -->
 																                <div class="progress-extended">&nbsp;</div>
 																            </div>
+
+																            <div class="col-lg-12" style="margin-bottom: 20px">
+																		        <div class="acf-input-wrap">
+																					<div class="field-type" style="display: inline-block;">Search:</div>
+															                    	<input type="text" class="field-type search-upload-logos">
+															                    </div>
+																            </div>
 																        </div>
 																        <!-- The table listing the files available for upload/download -->
 																        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
@@ -230,8 +251,8 @@
 						<div id="postbox-container-1" class="postbox-container">
 							<div class="acf-box">
 								<div class="inner">
-								    <h1><b>Vehicle Management Dashboard</b></h1>
-								    <p>Adding and updating of Makers and Models</p>
+								    <h1><b>Toyo Image Upload</b></h1>
+								    <p>Uploading and removing images</p>
 								</div>
 							</div>
 						</div>

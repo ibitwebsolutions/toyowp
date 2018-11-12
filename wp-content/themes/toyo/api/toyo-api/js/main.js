@@ -74,6 +74,37 @@ $(function () {
         });
     }
 
+    var multiDel = false;
+
+    // $('#fileupload').on('fileuploaddestroy', function (e, data) {
+    //       if(multiDel){ return true; };
+    //       var filename = data.url.substring(data.url.indexOf("=") + 1,data.url.indexOf("&"))
+    //       var delconf = confirm("Delete the file \"" + decodeURIComponent(filename) + "\"?");
+    //       if(!delconf) {
+    //           e.preventDefault;
+    //           return false;
+    //       }
+    // });
+
+    // $('#fileupload').fileupload({
+    //     multiDestroy: function (e) {
+    //         var delconf = confirm("Are you sure you wish to delete the selected files?");
+    //         if (!delconf) {
+    //             e.preventdefault;
+    //             return false;
+    //         } else { 
+    //             multiDel = true; 
+    //         }
+    //     }
+    // })
+    // .fileupload({
+    //     multiDestroyFinished: function (e) {
+    //       multiDel = false;
+    //     }
+    // });
+
+    
+
 
     // Tires
 
@@ -136,6 +167,7 @@ $(function () {
         });
     }
 
+
     // Logos
     // Initialize the jQuery File Upload widget:
     $('#logoupload').fileupload({
@@ -196,4 +228,42 @@ $(function () {
         });
     }
 
+    $('.search-upload-models').on('input',function(){
+        $('.search-upload-models').val (function () {
+            return this.value.toLowerCase();
+        })
+
+        if($('.search-upload-models').val().length>0&&$('.search-upload-models').val().length!=0){
+            $('.table tbody.files tr').css({'display':'none'});
+            $('.table tbody.files tr td p:contains('+$('.search-upload-models').val()+')').parent().parent().css({'display':'table-row'});
+        }else{
+            $('.table tbody.files tr').css({'display':'table-row'});
+        }
+    });
+
+    $('.search-upload-tires').on('input',function(){
+        $('.search-upload-tires').val (function () {
+            return this.value.toUpperCase();
+        })
+
+        if($('.search-upload-tires').val().length>0&&$('.search-upload-tires').val().length!=0){
+            $('.table tbody.files tr').css({'display':'none'});
+            $('.table tbody.files tr td p:contains('+$('.search-upload-tires').val()+')').parent().parent().css({'display':'table-row'});
+        }else{
+            $('.table tbody.files tr').css({'display':'table-row'});
+        }
+    });
+
+    $('.search-upload-logos').on('input',function(){
+        $('.search-upload-logos').val (function () {
+            return this.value.toUpperCase();
+        })
+
+        if($('.search-upload-logos').val().length>0&&$('.search-upload-logos').val().length!=0){
+            $('.table tbody.files tr').css({'display':'none'});
+            $('.table tbody.files tr td p:contains('+$('.search-upload-logos').val()+')').parent().parent().css({'display':'table-row'});
+        }else{
+            $('.table tbody.files tr').css({'display':'table-row'});
+        }
+    });
 });

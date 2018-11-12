@@ -15,7 +15,12 @@ if (car_id>0) {
 	var maker = CarData[0].maker.toUpperCase();
 
 	$('#the-list').empty();
+	var pairCollection="";
 	for(var i=0;i<CarData[0].models.length;i++){
+
+		for(y=0;y<CarData[0].models[i].pairs.length;y++){
+			pairCollection+="("+CarData[0].models[i].pairs[y].pair_codes+")";
+		}
 
 		$('#the-list').append(
 			"<tr id='post-44' class='iedit author-self level-0 post-44 type-acf-field-group status-publish hentry'>"+
@@ -29,7 +34,10 @@ if (car_id>0) {
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+
+		pairCollection="";
 	}
 
 
@@ -84,7 +92,12 @@ if (car_id>0) {
 	var maker = CarData[0].maker.toUpperCase();
 
 	$('#the-list').empty();
+	var pairCollection="";
 	for(var i=0;i<CarData[0].models.length;i++){
+
+		for(y=0;y<CarData[0].models[i].pairs.length;y++){
+			pairCollection+="("+CarData[0].models[i].pairs[y].pair_codes+")";
+		}
 
 		$('#the-list').append(
 			"<tr id='post-44' class='iedit author-self level-0 post-44 type-acf-field-group status-publish hentry'>"+
@@ -98,7 +111,10 @@ if (car_id>0) {
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+
+		pairCollection="";
 	}
 }
 
@@ -121,7 +137,12 @@ $('.car-select').change(function(){
 	var maker = CarData[0].maker.toUpperCase();
 
 	$('#the-list').empty();
+	var pairCollection="";
 	for(var i=0;i<CarData[0].models.length;i++){
+
+		for(y=0;y<CarData[0].models[i].pairs.length;y++){
+			pairCollection+="("+CarData[0].models[i].pairs[y].pair_codes+")";
+		}
 
 		$('#the-list').append(
 			"<tr id='post-44' class='iedit author-self level-0 post-44 type-acf-field-group status-publish hentry'>"+
@@ -135,20 +156,9 @@ $('.car-select').change(function(){
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+
+		pairCollection="";
 	}
-})
-
-
-
-$("#add-cars").submit(function(){
-	$.ajax({
-		url: PHPfunctionURL,
-		type:"POST", 
-		data: {fnID: 1},
-		success: function(result){
-		    cars = result.cars;
-		},
-		async: false
-	});
 });

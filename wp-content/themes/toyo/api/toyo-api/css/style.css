@@ -9,3 +9,18 @@
  * Licensed under the MIT license:
  * https://opensource.org/licenses/MIT
  */
+.table > tbody{
+	overflow: auto;
+	max-height: 200px;
+	height: 100%;
+}
+
+.success{
+	background-color: #268fbb!important;
+	
+}
+
+.success td,
+.success td a{
+	color: #fff!important;
+}

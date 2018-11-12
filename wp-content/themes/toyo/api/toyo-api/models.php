@@ -7,7 +7,7 @@
 		<div class="wpbody-content">
 			<div class="wrap">
 				<h1 class="wp-heading-inline">All Models</h1>
-				<a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew" class="page-title-action">Add New</a>
+				<a href="<?php menu_page_url('cars-addnew-model'); ?>" class="page-title-action">Add New</a>
 				<hr class="wp-header-end">
 				<ul class="subsubsub">
 					<li class="all">
@@ -35,7 +35,8 @@
 								                <label class="screen-reader-text">ID</label>
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Pairs</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </thead>
@@ -48,7 +49,8 @@
 								                <label class="screen-reader-text">ID</label>
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
-								            <th scope="col" id="acf-fg-status" class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Pairs</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
 								    </tfoot>

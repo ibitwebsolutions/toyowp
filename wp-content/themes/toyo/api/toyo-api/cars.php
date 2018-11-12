@@ -1,12 +1,12 @@
 <?php
     include 'functions.php';
+    include 'head.php';
 ?>
 <div class="wpcontent">
 	<div class="wpbody" role="main">
 		<div class="wpbody-content">
 			<div class="wrap">
 				<h1 class="wp-heading-inline">All Cars</h1>
-				<!-- <a href="http://toyotires.localhost/wp-admin/admin.php?page=cars-addnew" class="page-title-action">Add New</a> -->
 				<a href="<?php menu_page_url('cars-addnew'); ?>" class="page-title-action">Add New</a>
 				<hr class="wp-header-end">
 				<ul class="subsubsub">
@@ -44,11 +44,11 @@
 
 								    <tbody id="the-list">
 								    	<?php
-								    		$sql = "select *,(SELECT COUNT(*) from tb_model where tb_model.car_id=tb_cars.car_id) as cn from tb_cars";
+								    		$sql = "select *,(SELECT COUNT(*) from tb_model where tb_model.car_id=tb_cars.car_id) as cn from tb_cars order by car_id desc";
 										    $result = mysqli_query($conn, $sql);
 										    while($rows = mysqli_fetch_array($result)){
 								    	?>
-									        <tr id="post-44" class="iedit author-self level-0 post-44 type-acf-field-group status-publish hentry">
+									        <tr id="post-44" class="iedit author-self level-0 post-44 type-acf-field-group status-publish hentry" data-id="<?php echo $rows['car_id']?>">
 									            <th scope="row" class="check-column">
 									                <label class="screen-reader-text">Select Common Fields</label>
 									            </th>
@@ -101,3 +101,9 @@
 
 	include ("footer.php");
 ?>
+
+<script>
+	var newID = <?php echo ($_GET['newID'])? $_GET['newID']:'0'; ?>;
+
+	$("table tbody").find("[data-id='" + newID + "']").addClass('success');
+</script>

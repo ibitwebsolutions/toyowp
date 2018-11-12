@@ -1,4 +1,3 @@
-
 <!-- Bootstrap styles -->
 <link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/css/bootstrap.min.css">
 <!-- Generic page styles -->
