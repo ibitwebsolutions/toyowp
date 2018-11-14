@@ -1,7 +1,31 @@
 <?php
     include 'functions.php';
-    include 'head.php';
 ?>
+
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.core.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.arrow.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.autocomplete.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.clear.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.focus.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.prompt.css">
+<link rel="stylesheet" href="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/css/textext.plugin.tags.css">
+
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.core.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.tags.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.autocomplete.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.suggestions.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.filter.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.focus.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.prompt.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.ajax.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/js/textext.plugin.arrow.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script>
+	var rootURL = "<?php echo get_template_directory_uri()?>";
+</script>
+
 
 <style>
 	#tabBulk{
@@ -24,7 +48,7 @@
 									<div class="acf-field-list-wrap">
 										<div class="acf-field-list">
 											<div class="acf-field-object acf-field-object-text">
-												<div class="settings" style="display: block;">
+												<form id="add-model" class="settings" style="display: block;">
 												    <table class="acf-table">
 												        <tbody>
 												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
@@ -33,7 +57,7 @@
 												                </td>
 												                <td class="acf-input">
 												                    <div class="acf-input-wrap">
-												                    	<input type="text" id="maker-name" class="field-label" placeholder="ex. Toyota, Mitsubishi, Hi-Ace etc..." style="width: 100%;">
+												                    	<input type="text" id="model-name" class="field-label" placeholder="ex. Toyota, Mitsubishi, Hi-Ace etc..." style="width: 100%;">
 												                    </div>
 												                </td>
 												            </tr>
@@ -47,14 +71,24 @@
 												                    </div>
 												                </td>
 												            </tr>
+												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
+												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Paired Item Codes(OITM)</b></label>
+												                    <p class="description">Item codes from OITM</p>
+												                </td>
+												                <td class="acf-input">
+												                    <div class="acf-input-wrap">
+												                    	<textarea id="textarea" rows="1" class="wp-editor-area"></textarea>
+												                    </div>
+												                </td>
+												            </tr>
 												        </tbody>
 												    </table>
 													<ul class="acf-hl acf-tfoot" style="border: #DFDFDF solid 1px;">
 														<li class="acf-fr">
-															<a href="#" class="button button-primary button-large add-field">Save</a>
+															<button id="add-cars-btn" class="button button-primary button-large add-field">Save</button>
 														</li>
 													</ul>
-												</div>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -76,7 +110,59 @@
 	</div>
 </div>
 
-<?php 
 
-	include ("footer.php");
-?>
+<script>
+	var textURI = "<?=get_template_directory_uri()?>/api/toyo-api/texttext-src/data.php";
+	var PHPfunctionURL = "<?=get_template_directory_uri()?>/api/toyo-api/functions.php";
+	var car_id = <?php echo ($_GET['car_id'])? $_GET['car_id']:'0'; ?>;
+
+	$.ajax({
+		url: PHPfunctionURL,
+		type:"POST", 
+		data: {fnID: 1},
+		success: function(result){
+		    cars = result.cars;
+		},
+		async: false
+	});
+
+	var CarsList = cars;
+	for(var i=0;i<CarsList.length;i++){
+		if (CarsList[i].maker_id==car_id) {
+			$('.car-select').append("<option data-id='"+CarsList[i].maker_id+" 'data-index='"+i+"' selected>"+CarsList[i].maker.toUpperCase()+"</option>");			
+		}else{
+			$('.car-select').append("<option data-id='"+CarsList[i].maker_id+" 'data-index='"+i+"'>"+CarsList[i].maker.toUpperCase()+"</option>");			
+		}
+	}
+
+    $("#add-model").submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			url: PHPfunctionURL,
+			type:"POST", 
+			data: {
+					fnID: 4,
+					model: $('#model-name').val(),
+					car_id:$('.car-select').find(":selected").data('id'),
+					pairs: $('#add-model input[type=hidden]').val()
+			},
+			success: function(result){
+				if (result.success) {
+			    	window.location ='<?php menu_page_url('cars-model'); ?>&car_id='+result.car_id+'&newID='+result.newID;
+			    }
+			},
+			async: false
+		});
+	});
+
+
+	$('#textarea').textext({
+        plugins : 'tags focus autocomplete ajax filter',
+        ajax : {
+            url : textURI,
+            dataType : 'json',
+            cacheResults : true
+        }
+    });
+
+</script>

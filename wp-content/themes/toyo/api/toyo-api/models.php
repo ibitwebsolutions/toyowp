@@ -77,3 +77,10 @@
 
 	include ("footer.php");
 ?>
+
+
+<script>
+	var newID = <?php echo ($_GET['newID'])? $_GET['newID']:'0'; ?>;
+
+	$("table tbody").find("[data-id='" + newID + "']").addClass('success');
+</script>

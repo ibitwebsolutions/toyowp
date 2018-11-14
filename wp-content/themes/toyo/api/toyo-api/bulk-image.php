@@ -266,4 +266,5 @@
 <?php 
 
 	include ("footer.php");
+	include ("uploadFoot.php");
 ?>

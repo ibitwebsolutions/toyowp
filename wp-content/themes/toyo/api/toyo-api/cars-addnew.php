@@ -3,6 +3,11 @@
     include 'header.php';
 ?>
 
+
+<script>
+	var rootURL = "<?php echo get_template_directory_uri()?>";
+</script>
+
 <div class="wpcontent">
 	<div class="wpbody" role="main">
 		<div class="wpbody-content">
@@ -67,20 +72,20 @@
 
 <script>
 	$("#add-cars").submit(function(e){
-	e.preventDefault();
-	$.ajax({
-		url: PHPfunctionURL,
-		type:"POST", 
-		data: {
-				fnID: 3,
-				maker: $('#maker-name').val()
-		},
-		success: function(result){
-		    if (result.success) {
-		    	window.location ='<?php menu_page_url('cars'); ?>&newID='+result.newID;
-		    }
-		},
-		async: false
+		e.preventDefault();
+		$.ajax({
+			url: PHPfunctionURL,
+			type:"POST", 
+			data: {
+					fnID: 3,
+					maker: $('#maker-name').val()
+			},
+			success: function(result){
+			    if (result.success) {
+			    	window.location ='<?php menu_page_url('cars'); ?>&newID='+result.newID;
+			    }
+			},
+			async: false
+		});
 	});
-});
 </script>

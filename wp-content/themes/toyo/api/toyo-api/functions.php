@@ -94,3 +94,28 @@ else if ($fn==3) {
     header('Content-Type: application/json');
     echo json_encode(array("success"=>1,"newID"=>$conn->insert_id));
 }
+
+else if ($fn==4) {
+
+    //Parsing array string from hidden input form
+    $pairs = $_POST['pairs'];
+    $split = explode(',', $pairs);
+    $prepared =  preg_replace('/[^A-Za-z0-9\-]/', '', $split);
+
+    $car_id = $_POST['car_id'];
+    $model = $_POST['model'];
+
+    $sql = "INSERT INTO tb_model(`car_id`,`model`) VALUES('".$car_id."','".$model."')";
+    $conn->query($sql);
+
+    $lastID = $conn->insert_id;
+
+    foreach ($prepared as $key) {
+       $pairingInsert = "INSERT INTO tb_pairing(`car_id`,`model_id`,`item_code`) VALUES('".$car_id."','".$lastID."','".$key."')";
+        $conn->query($pairingInsert);
+
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode(array("success"=>1,"newID"=>$lastID,"car_id"=>$car_id));
+}
