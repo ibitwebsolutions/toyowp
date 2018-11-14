@@ -105,8 +105,9 @@ else if ($fn==4) {
 
     $car_id = $_POST['car_id'];
     $model = strtolower($_POST['model']);
+    $size = $_POST['size'];
 
-    $sql = "INSERT INTO tb_model(`car_id`,`model`) VALUES('".$car_id."','".$model."')";
+    $sql = "INSERT INTO tb_model(`car_id`,`model`,`default_size`) VALUES('".$car_id."','".$model."','".$size."')";
     $conn->query($sql);
 
     $lastID = $conn->insert_id;
@@ -119,4 +120,81 @@ else if ($fn==4) {
 
     header('Content-Type: application/json');
     echo json_encode(array("success"=>1,"newID"=>$lastID,"car_id"=>$car_id));
+}
+
+
+// Checking value if exist or not
+function analyze($data,$colIndex){
+    if ($colIndex==0) {
+        if($carResult = mysqli_query($conn,"SELECT * FROM tb_cars where maker=".$data)){
+            if(mysqli_num_rows($carResult) > 0){
+                // Data exist!
+                $sql = "UPDATE tb_cars SET maker='".$data."' WHERE maker=".$data;
+                $conn->query($sql);
+                return 'updated';
+            }else{
+                // Data New!
+                $sql = "INSERT INTO tb_cars VALUES(`maker`) WHERE maker=".$data;
+                $conn->query($sql);
+                return 'added';
+            }
+        }
+    }
+
+    else if ($colIndex==1) {
+        if($carResult = mysqli_query($conn,"SELECT * FROM tb_model where model=".$data)){
+            if(mysqli_num_rows($carResult) > 0){
+                // Data exist!
+                $sql = "UPDATE tb_model SET model='".$data."' WHERE model=".$data;
+                $conn->query($sql);
+                return 'updated';
+            }else{
+                // Data New!
+                $sql = "INSERT INTO tb_model VALUES(`model`) WHERE model=".$data;
+                $conn->query($sql);
+                return 'added';
+            }
+        }
+    }
+
+    else if ($colIndex==2) {
+        if($carResult = mysqli_query($conn,"SELECT * FROM tb_model where default_size=".$data)){
+            if(mysqli_num_rows($carResult) > 0){
+                // Data exist!
+                $sql = "UPDATE tb_model SET default_size='".$data."' WHERE default_size=".$data;
+                $conn->query($sql);
+                return 'updated';
+            }else{
+                // Data New!
+                $sql = "INSERT INTO tb_model VALUES(`default_size`) WHERE default_size=".$data;
+                $conn->query($sql);
+                return 'added';
+            }
+        }
+    }
+}
+
+function checkPair($data,$car_id,$model_id){
+    $list = explode(',', $data);
+    foreach ($list as $key) {
+        if($carResult = mysqli_query($conn,"SELECT pairing_id FROM tb_pairings where car_id='".$car_id."', model_id='".$model_id."' AND item_code=".$key)){
+            while($row = mysqli_fetch_array($carResult))
+            {
+                $id = $row['pairing_id'];
+            }
+
+
+            if(mysqli_num_rows($carResult) > 0){
+                // Data exist!
+                $sql = "UPDATE tb_pairings SET item_code='".$key."' WHERE pairing_id=".$id;
+                $conn->query($sql);
+
+
+            }else{
+                // Data New!
+                $sql = "INSERT INTO tb_model VALUES(`default_size`) WHERE default_size=".$key;
+                $conn->query($sql);
+            }
+        }
+    }
 }

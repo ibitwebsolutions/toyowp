@@ -90,6 +90,15 @@ function wpdocs_register_my_custom_menu_page() {
     'wp_cars_addnew_model'
   );
 
+  add_submenu_page( 
+    'cars', 
+    'Add CSV Files', 
+    'Add CSV', 
+    'manage_options', 
+    'cars-csv', 
+    'wp_cars_addnew_csv'
+  );
+
   add_menu_page(
     'Patterns Page', 
     'Toyo Patterns', 
@@ -135,6 +144,10 @@ function wp_cars_model(){
 
 function wp_cars_addnew_model(){
     include ('api/toyo-api/cars-addnew-model.php');
+}
+
+function wp_cars_addnew_csv(){
+    include ('api/toyo-api/csv.php');
 }
 
 function wp_patterns_theme(){

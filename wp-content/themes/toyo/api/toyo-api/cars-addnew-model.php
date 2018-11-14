@@ -72,6 +72,16 @@
 												                </td>
 												            </tr>
 												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
+												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Default Tire Size</b></label>
+												                    <p class="description">Vehicle's default tire size(use space for size format)</p>
+												                </td>
+												                <td class="acf-input">
+												                    <div class="acf-input-wrap">
+												                    	<input type="text" id="default-size" class="field-label" placeholder="ex. 265/65 R 17, 215/50 R 16, 10x10 etc..." style="width: 100%;">
+												                    </div>
+												                </td>
+												            </tr>
+												            <tr class="acf-field acf-field-text acf-field-setting-label" data-name="label" data-type="text">
 												                <td class="acf-label"><label for="acf_fields-acfcloneindex-label"><b>Paired Item Codes(OITM)</b></label>
 												                    <p class="description">Item codes from OITM</p>
 												                </td>
@@ -143,6 +153,7 @@
 			data: {
 					fnID: 4,
 					model: $('#model-name').val(),
+					size: $('#default-size').val(),
 					car_id:$('.car-select').find(":selected").data('id'),
 					pairs: $('#add-model input[type=hidden]').val()
 			},
