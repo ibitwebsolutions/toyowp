@@ -19,21 +19,32 @@ else if(current_url==home_url+"about-us/"){
 	});
 }
 else if(current_url==home_url+"tires/"){
+	var Twidth = [];
+	var Tratio = [];
+	var Trim = [];
 
-	var Twidth = [
-				"145","155","175","185","195","205","215",
-				"225","235","245","255","265","275","285",
-				"295","305","315","325","335","345","385",
-				"30","31","33","35","37","38","40"
-			];
+	$.ajax({
+		url: templateUrl+"api/function.php",
+		type:"POST", 
+		data: {
+				fnID: 5
+		},
+		success: function(result){
 
-	var Tratio = [
-		"45","50","55","60","65","70","75"
-	];
+			for(var a=0;a<result[0].length;a++){
+				Twidth.push(result[0][a])
+			}
 
-	var Trim = [
-		"15","16","17","18"
-	];
+			for(var b=0;b<result[1].length;b++){
+				Tratio.push(result[1][b])
+			}
+
+			for(var c=0;c<result[2].length;c++){
+				Trim.push(result[2][c])
+			}
+		},
+		async: false
+	});
 
 	var img1 = document.createElement("img");
 	img1.onload = function(){

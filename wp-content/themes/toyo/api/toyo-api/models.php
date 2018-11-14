@@ -36,6 +36,7 @@
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
 								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Default Size</th>
 								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Pairs</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>
@@ -50,6 +51,7 @@
 								            </td>
 								            <th scope="col" id="title" class="manage-column column-title column-primary"><span>Models</span><span class="sorting-indicator"></span></th>
 								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Preview</th>
+								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Default Size</th>
 								            <th scope="col"  class="manage-column column-acf-fg-status" style="text-align:center">Pairs</th>
 								            <th scope="col" id="acf-fg-count" class="manage-column column-acf-fg-count" style="text-align:center">Maker</th>
 								        </tr>

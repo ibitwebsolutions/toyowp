@@ -12,7 +12,7 @@ if (car_id>0) {
 	});
 
 	var CarData = cars;
-	var maker = CarData[0].maker.toUpperCase();
+	var maker = CarData[0].maker;
 
 	$('#the-list').empty();
 	var pairCollection="";
@@ -34,8 +34,9 @@ if (car_id>0) {
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'>"+CarData[0].models[i].default_size+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
-    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker.toUpperCase()+"</td></tr>");
 
 		pairCollection="";
 	}
@@ -89,7 +90,7 @@ if (car_id>0) {
 	});
 
 	var CarData = cars;
-	var maker = CarData[0].maker.toUpperCase();
+	var maker = CarData[0].maker;
 
 	$('#the-list').empty();
 	var pairCollection="";
@@ -111,8 +112,9 @@ if (car_id>0) {
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'>"+CarData[0].models[i].default_size+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
-    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker.toUpperCase()+"</td></tr>");
 
 		pairCollection="";
 	}
@@ -134,7 +136,7 @@ $('.car-select').change(function(){
 	});
 
 	var CarData = cars;
-	var maker = CarData[0].maker.toUpperCase();
+	var maker = CarData[0].maker;
 
 	$('#the-list').empty();
 	var pairCollection="";
@@ -156,8 +158,9 @@ $('.car-select').change(function(){
         	"<button type='button' class='toggle-row'><span class='screen-reader-text'>Show more details</span></button>"+
     		"</td>"+
     		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'><img src='"+rootURL+"/server/models/files/thumbnail/"+maker+"-"+CarData[0].models[i].name+".png'/></td>"+
+    		"<td class='acf-fg-status column-acf-fg-status' data-colname='Status' style='text-align:center'>"+CarData[0].models[i].default_size+"</td>"+
     		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+pairCollection+"</td>"+
-    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker+"</td></tr>");
+    		"<td class='acf-fg-count column-acf-fg-count' data-colname='Fields' style='text-align:center'>"+maker.toUpperCase()+"</td></tr>");
 
 		pairCollection="";
 	}

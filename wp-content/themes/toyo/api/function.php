@@ -63,7 +63,9 @@ else if ($fn==2){
 }
 else if ($fn==3){
         $resultOITM = array();
-        $desc = $_POST['width']."/".$_POST['ratio']." R ".$_POST['rim'];
+
+        ($_POST['ratio']) ? $r = $_POST['ratio']." R " : $r = "";
+        $desc = $_POST['width']."/".$r.$_POST['rim'];
         
         $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
         $result = mysqli_query($conn, $sql);
@@ -104,6 +106,18 @@ else if ($fn==4){
 
         header('Content-Type: application/json');
         echo json_encode(array("result"=>array_values($resultOITM)));
+}
+else if ($fn==5){
+    $sql = "SELECT * FROM tb_sizeoptions";
+    $result = mysqli_query($conn, $sql);
+    while($rowz = mysqli_fetch_array($result)){
+        $Twidth = explode(',', $rowz['Twidth']);
+        $Tratio = explode(',', $rowz['Tratio']);
+        $Trim = explode(',', $rowz['Trim']);
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode(array($Twidth,$Tratio,$Trim));
 }
 
 ?>

@@ -48,7 +48,7 @@ else if ($fn==2) {
     while($row = mysqli_fetch_array($result))
     {
        // This will loop through each row, now use your loop here
-        $q = "SELECT * FROM tb_model where car_id=".$row['car_id'];
+        $q = "SELECT * FROM tb_model where car_id=".$row['car_id']." ORDER BY model_id desc";
         $res = mysqli_query($conn, $q);
         $arz = [];
         while($rowz = mysqli_fetch_array($res))
@@ -67,6 +67,7 @@ else if ($fn==2) {
              array_push($arz , array(
                             "model_id"=>$rowz['model_id'],
                             "name"=>$rowz['model'],
+                            "default_size"=>$rowz['default_size'],
                             "pairs"=>$k
                         ));
         }
@@ -88,7 +89,7 @@ else if ($fn==2) {
 
 else if ($fn==3) {
 
-    $sql = "INSERT INTO tb_cars(`maker`) VALUES('". $_POST['maker']."')";
+    $sql = "INSERT INTO tb_cars(`maker`) VALUES('". strtolower($_POST['maker'])."')";
     $conn->query($sql);
 
     header('Content-Type: application/json');
@@ -103,7 +104,7 @@ else if ($fn==4) {
     $prepared =  preg_replace('/[^A-Za-z0-9\-]/', '', $split);
 
     $car_id = $_POST['car_id'];
-    $model = $_POST['model'];
+    $model = strtolower($_POST['model']);
 
     $sql = "INSERT INTO tb_model(`car_id`,`model`) VALUES('".$car_id."','".$model."')";
     $conn->query($sql);
@@ -111,7 +112,7 @@ else if ($fn==4) {
     $lastID = $conn->insert_id;
 
     foreach ($prepared as $key) {
-       $pairingInsert = "INSERT INTO tb_pairing(`car_id`,`model_id`,`item_code`) VALUES('".$car_id."','".$lastID."','".$key."')";
+       $pairingInsert = "INSERT INTO tb_pairings(`car_id`,`model_id`,`item_code`) VALUES('".$car_id."','".$lastID."','".$key."')";
         $conn->query($pairingInsert);
 
     }

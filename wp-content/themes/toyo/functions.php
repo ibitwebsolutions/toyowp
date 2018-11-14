@@ -107,6 +107,15 @@ function wpdocs_register_my_custom_menu_page() {
     'wp_toyoimages_theme',
     'dashicons-format-gallery'
   );
+
+  add_menu_page(
+    'Settings Page', 
+    'Toyo Settings', 
+    'manage_options', 
+    'toyo-settings', 
+    'wp_toyosettings_theme',
+    'dashicons-admin-generic'
+  );
 }
 
 add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
@@ -134,4 +143,8 @@ function wp_patterns_theme(){
 
 function wp_toyoimages_theme(){
     include ('api/toyo-api/bulk-image.php');
+}
+
+function wp_toyosettings_theme(){
+    include ('api/toyo-api/settings.php');
 }
