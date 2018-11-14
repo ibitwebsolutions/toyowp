@@ -41,13 +41,8 @@ var locations = <?php echo $dealers_data; ?>;
 </script>
 
 <script>
-var locations = [{"dealers_name":"Toyo Tires Driven","dealers_address":"1113 Banawe St, Quezon City, Metro Manila","dealers_contact":"","dealers_latitude":"14.6191054","dealers_longitude":"121.0060365","dealers_icon":"http:\/\/demo.toyotires.org\/wp-content\/uploads\/2018\/10\/download.png"},{"dealers_name":"Toyo Tires Philippines","dealers_address":"347 Ortigas Ave, Greenhills East, Mandaluyong, 1554, Mandaluyong, Metro Manila","dealers_contact":"","dealers_latitude":"14.5947099","dealers_longitude":"121.0558002","dealers_icon":"http:\/\/demo.toyotires.org\/wp-content\/uploads\/2018\/10\/download.png"},{"dealers_name":"Ayala Triangle Park","dealers_address":"Makati City","dealers_contact":"","dealers_latitude":"14.5571","dealers_longitude":"121.0207707","dealers_icon":"http:\/\/demo.toyotires.org\/wp-content\/uploads\/2018\/10\/download.png"}];
 
 
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
 var directionsDisplay, directionsService, map, firstPoint, lastPoint, myLat, myLong;
 var map, infoWindow;
 
@@ -69,6 +64,10 @@ function initMap() {
                 lng: position.coords.longitude
             };
             firstPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+						infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
             directionsDisplay.setMap(map);
             calculateRoute(locations);
 
@@ -81,24 +80,8 @@ function initMap() {
     }
 }
 
-// function calculateRoute() {
-
-// var lastPoint = new google.maps.LatLng(14.7938922, 120.953604);
-// var request = {
-// origin: firstPoint,
-// destination: lastPoint,
-// travelMode: 'DRIVING'
-// }
-
-// directionsService.route(request, function(result, status) {
-// directionsDisplay.setDirections(result);
-// });
-// }
 var arr = [];
-var newData;	
-
 function calculateRoute(locations) {
-
 	for(x = 0; x < locations.length; x++) {
 		var lastPoint = new google.maps.LatLng(locations[x].dealers_latitude, locations[x].dealers_longitude);
 		var request = {
@@ -123,19 +106,15 @@ function calculateRoute(locations) {
 			arr.push(newData);
 		});
 	};
-	
-
 	setTimeout(function(){
-		
-		console.log(arr.length);
-    	console.log(arr);
-		var closest = arr.reduce(function(acc, loc) {
-		    acc.distance < loc.distance ?
-		        acc :
-		        loc
-		}, 0);
+		console.log(arr);
+		var closest = arr.reduce((min, p) => 
+		p.distance < min 
+		? p.distance
+		: min);
+		console.log(closest);
 		directionsService.route(request, function(result, status) {
-		    console.log(closest.result);
+		    
 		    markerA = new google.maps.Marker({
 		            position: closest.result.routes[0].legs[0].start_location,
 		            title: closest.origin,
@@ -155,20 +134,11 @@ function calculateRoute(locations) {
 
 
 		});
-	},5000);
-
-
-
+	},1000);
 };
 
 
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-// 	infoWindow.setPosition(pos);
-// 	infoWindow.setContent(browserHasGeolocation ?
-// 	'Error: The Geolocation service failed.' :
-// 	'Error: Your browser doesn\'t support geolocation.');
-// 	infoWindow.open(map);
-// }
+
 
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4QVHROrqd3qGOyjKmBIxR6EoEjfbmfiA&callback=initMap"></script>
