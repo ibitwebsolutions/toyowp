@@ -21,6 +21,32 @@
 }
 
 .success td,
-.success td a{
+.success td a,
+{
 	color: #fff!important;
+}
+
+.added{
+	color: #fff!important;
+	background-color: #4285f4!important;
+}
+
+.existing{
+	color: #fff!important;
+	background-color: #ea4335!important;
+}
+
+.csvlegend{
+	display: inline-block;
+	list-style: none;
+}
+
+.csvlegend li{
+	display: inline-block;
+	float: left;
+	padding: 2px 8px;
+	margin-bottom: 0!important;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 5px;
 }
