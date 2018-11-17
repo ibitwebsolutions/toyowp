@@ -1,7 +1,13 @@
 <?php
 error_reporting(0);
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
+$conn;
+
+if($_SERVER['SERVER_NAME']=='toyotires.localhost'){
+    $conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
+}else{
+     $conn = mysqli_connect('localhost', 'toyotir1', '8372742Rbb*', 'toyotir1_db');
+}
 
 
 $fn = $_POST['fnID'];
@@ -63,9 +69,9 @@ else if ($fn==2){
 }
 else if ($fn==3){
         $resultOITM = array();
-
-        ($_POST['ratio']) ? $r = $_POST['ratio']." R " : $r = "";
-        $desc = $_POST['width']."/".$r.$_POST['rim'];
+        $r;
+        ($_POST['ratio']) ? $r = "/".$_POST['ratio']." R " : $r = " R ";
+        $desc = $_POST['width'].$r.$_POST['rim'];
         
         $sql = "SELECT * FROM tb_oitm, tb_patterns WHERE tb_oitm.pattern_id = tb_patterns.pattern_id and tb_oitm.item_desc LIKE '%".$desc."%'";
         $result = mysqli_query($conn, $sql);

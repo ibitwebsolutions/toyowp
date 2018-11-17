@@ -29,7 +29,6 @@
 		    $conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
 		}else{
 		     $conn = mysqli_connect('localhost', 'toyotir1', '8372742Rbb*', 'toyotir1_db');
-		}  $conn = mysqli_connect('localhost', 'root', '8372742Rbb*', 'toyotir1_db');
 		}
 		// Cars
 		$carResult = mysqli_query($conn,"SELECT * FROM tb_cars where `maker`='".$maker."'");
@@ -102,7 +101,7 @@
 	<div class="wpbody" role="main">
 		<div class="wpbody-content">
 			<div class="wrap">
-				<h1 class="wp-heading-inline">Toyo CSV Upload</h1>
+				<h1 class="wp-heading-inline">Toyo Patterns CSV Upload</h1>
 				<hr class="wp-header-end">
 				<div id="poststuff">
 					<div id="post-body" class="metabox-holder columns-2">

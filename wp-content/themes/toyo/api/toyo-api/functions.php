@@ -2,7 +2,13 @@
 error_reporting(0);
 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
+
+$conn;
+if($_SERVER['SERVER_NAME']=='toyotires.localhost'){
+    $conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
+}else{
+     $conn = mysqli_connect('localhost', 'toyotir1', '8372742Rbb*', 'toyotir1_db');
+}
 
 $fn = $_POST['fnID'];
 if ($fn==1) {
@@ -120,4 +126,42 @@ else if ($fn==4) {
 
     header('Content-Type: application/json');
     echo json_encode(array("success"=>1,"newID"=>$lastID,"car_id"=>$car_id));
+}
+
+else if ($fn==5) {
+    $sql = "SELECT * FROM tb_patterns order by pattern_id desc";
+    $result = mysqli_query($conn, $sql);
+    $arr = array();
+    while($rows = mysqli_fetch_array($result))
+    {
+        array_push($arr , array(
+                            "pattern_id"=>$rows["pattern_id"],
+                            "pattern"=>$rows["pattern"],
+                            "pattern_code"=>$rows["pattern_code"],
+                            "pattern_fullDesc"=>strip_tags($rows["pattern_fullDesc"])
+                        )
+                );
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode(array_values($arr));
+}
+
+else if ($fn==6) {
+    $sql = "SELECT * FROM tb_patterns where pattern LIKE '%".$_POST['data']."%'";
+    $result = mysqli_query($conn, $sql);
+    $arr = array();
+    while($rows = mysqli_fetch_array($result))
+    {
+        array_push($arr , array(
+                            "pattern_id"=>$rows["pattern_id"],
+                            "pattern"=>$rows["pattern"],
+                            "pattern_code"=>$rows["pattern_code"],
+                            "pattern_fullDesc"=>strip_tags($rows["pattern_fullDesc"])
+                        )
+                );
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode(array_values($arr));
 }

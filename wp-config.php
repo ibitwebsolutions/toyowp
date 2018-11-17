@@ -20,22 +20,44 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wp_toyotires');
 
-/** MySQL database username */
-define('DB_USER', 'root');
 
-/** MySQL database password */
-define('DB_PASSWORD', '');
+if($_SERVER['SERVER_NAME']=='toyotires.localhost'){
+	define('DB_NAME', 'wp_toyotires');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL database username */
+	define('DB_USER', 'root');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+	/** MySQL database password */
+	define('DB_PASSWORD', '');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8mb4');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+}
+else{
+	define('DB_NAME', 'toyotir1_db');
+
+	/** MySQL database username */
+	define('DB_USER', 'toyotir1');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', '8372742Rbb*');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8mb4');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.

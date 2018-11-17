@@ -15,12 +15,14 @@
 	height: 100%;
 }
 
-.success{
+.widefat > #the-list > .success{
+	color: #fff!important;
 	background-color: #268fbb!important;
 	
 }
 
 .success td,
+.success td strong a,
 .success td a,
 {
 	color: #fff!important;
@@ -49,4 +51,13 @@
 	text-align: center;
 	font-weight: bold;
 	margin-right: 5px;
+}
+
+tr td.truncate {
+  overflow: hidden;
+  width: 250px;
+  height: 70px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
 }
