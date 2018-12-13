@@ -9,8 +9,19 @@
         <div class="page">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-3">
                         <p class="page-title">Find your fit</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="searchBlock">
+                            <form action="#" id="manual-searchForm" class="manualSearch" >
+                                <div class="input-group">
+                                    <input type="text" id="manualSearch" autocomplete="off">
+                                    <ul class="suggestList"></ul>
+                                    <input type="submit" value="Submit" id="submitmanual" class="btn custom-btn">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

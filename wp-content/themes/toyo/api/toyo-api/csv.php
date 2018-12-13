@@ -29,7 +29,7 @@
 		    $conn = mysqli_connect('localhost', 'root', '', 'wp_toyotires');
 		}else{
 		     $conn = mysqli_connect('localhost', 'toyotir1', '8372742Rbb*', 'toyotir1_db');
-		}  $conn = mysqli_connect('localhost', 'root', '8372742Rbb*', 'toyotir1_db');
+		  $conn = mysqli_connect('localhost', 'root', '8372742Rbb*', 'toyotir1_db');
 		}
 		// Cars
 		$carResult = mysqli_query($conn,"SELECT * FROM tb_cars where `maker`='".$maker."'");
