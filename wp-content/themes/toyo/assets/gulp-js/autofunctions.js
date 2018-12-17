@@ -338,8 +338,8 @@ else if(current_url==home_url+"news/"){
 	$('.news-slider').slick({
 		autoplay:false,
 		lazyLoad: 'ondemand',
-		prevArrow: $(".prev"),
-		nextArrow: $(".next"),
+		prevArrow: $(".next"),
+		nextArrow: $(".prev"),
 		fade: false,
 		dots: false,
 		slidesToShow: 3,

@@ -7713,6 +7713,25 @@ ul.size-select li a.active {
   height: 290px !important;
 }
 
+.news-body .slide-box .news-box h3.title {
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: -10px;
+  background: rgba(1, 109, 184, 0.65);
+  color: #fff;
+  height: 80px;
+  border-top: 5px solid #fff;
+  padding: 2.5%;
+  line-height: 150%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
 .news-about .slide-box {
   padding: 0;
 }
@@ -7819,7 +7838,7 @@ ul.size-select li a.active {
 .searchBlock {
   display: inline-block;
   position: relative;
-  width: 444px;
+  width: 100%;
 }
 
 .searchBlock .manualSearch {
@@ -7858,10 +7877,11 @@ ul.size-select li a.active {
   overflow-y: scroll;
   position: absolute;
   width: 80%;
-  top: 75px;
+  top: 35px;
   padding: 0 !important;
   max-height: 65px;
   text-align: left;
+  z-index: 800;
 }
 
 .searchBlock .manualSearch .input-group ul.suggestList li {

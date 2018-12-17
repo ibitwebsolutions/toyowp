@@ -290,7 +290,7 @@ $(function () {
 
     $('.search-upload-models').on('input',function(){
         $('.search-upload-models').val (function () {
-            return this.value.toLowerCase();
+            return this.value.toUpperCase();
         })
 
         if($('.search-upload-models').val().length>0&&$('.search-upload-models').val().length!=0){

@@ -4,7 +4,7 @@
     */
     get_header();
 ?>
-<section>
+<section style="height: auto;">
 		<article>
 			<div class="page">
 				<div class="container">
@@ -18,11 +18,11 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8  col-xs-12">
-                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-                            the_content();
-                            endwhile; else: ?>
-                            <p>Sorry, no posts matched your criteria.</p>
-                            <?php endif; ?>
+								<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+								the_content();
+								endwhile; else: ?>
+								<p>Sorry, no posts matched your criteria.</p>
+								<?php endif; ?>
 							</div>
 
 							<div class="col-md-4 col-xs-12">
@@ -31,21 +31,28 @@
 									<div class="slide-box">
 										<div class="newsmini-slider">
 											<?php
-												$news = get_field('field_5bd281889aaac', 23);
-		                                        foreach($news as $item) {
+												$args = array(
+													'post_type' => 'post'
+												);
+
+												$the_query = new WP_Query( $args );
+												if ( $the_query->have_posts() ) {
+													while ( $the_query->have_posts() ) {
+														$the_query->the_post();
 		                                    ?>
 		                                    <div>
 												<div class="news-box row">
-													<img data-lazy="<?php echo $item['news_image'] ?>" class="news-bg" alt="">
+													<img data-lazy="<?php echo the_field('slide_image'); ?>" class="news-bg" alt="">
 			                                        <div class="col-md-12">
-														<a href="<?php echo site_url().'/news/'; ?>">
-															<img class="img-responsive item-img" data-lazy="<?php echo $item['news_image'] ?>" alt="">
+														<a href="<?php the_permalink(); ?>">
+															<img class="img-responsive item-img" data-lazy="<?php echo the_field('slide_image'); ?>" alt="">
 														</a>
 													</div>
 												</div>
 		                                    </div>
 		                                    <?php
-		                                        }
+													}
+												}
 											?>
 										</div>
 									</div>

@@ -43,8 +43,8 @@
                                     <h3 style="margin-top:0">HOW TO FIND YOUR TIRE SIZE</h3>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/1-min.png" alt="" id="chart">
                                 </div>
-                                <div class="searchBlock">
-                                    <form action="#" id="manual-searchForm" class="manualSearch" >
+                                <div class="searchBlock" style="display: none">
+                                   <!--  <form action="#" id="manual-searchForm" class="manualSearch" >
                                         <div class="input-group">
                                             <label for="#manualSearch">MANUAL SEARCH INPUT</label>
                                             <span>Note: This is for custom sizes</span>
@@ -52,7 +52,7 @@
                                             <ul class="suggestList"></ul>
                                             <input type="submit" value="Submit" id="submitmanual" class="btn custom-btn">
                                         </div>
-                                    </form>
+                                    </form> -->
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-pull-6 col-xs-12">

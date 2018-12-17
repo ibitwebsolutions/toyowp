@@ -358,6 +358,26 @@ ul.size-select {
                 width: auto!important;
                 height: 290px!important;
             }
+            
+
+            h3.title{
+                font-size: 20px;
+                font-weight: normal;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: -10px;
+                background: rgba(1,109,184,0.65);
+                color: #fff;
+                height: 80px;
+                border-top: 5px solid #fff;
+                padding: 2.5%;
+                line-height: 150%;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+            }
         }
     }
 }
@@ -472,7 +492,7 @@ ul.size-select {
 .searchBlock {
     display: inline-block;
     position: relative;
-    width: 444px;
+    width: 100%;
 
     .manualSearch {
         margin-top: 20px;
@@ -508,10 +528,11 @@ ul.size-select {
                 overflow-y: scroll;
                 position: absolute;
                 width: 80%;
-                top: 75px;
+                top: 35px;
                 padding: 0 !important;
                 max-height: 65px;
                 text-align: left;
+                z-index: 800;
 
                 li {
                     padding: 6px 12px;
